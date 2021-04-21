@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
+$headerFont: "Staatliches", cursive;
+
+.main {
+  padding-top: 1.3em;
+  background-color: #ffffff;
+  width: 400px;
+  height: 500px;
+  margin: 3em auto;
+  border-radius: 3px;
+  box-shadow: 0px 11px 35px 2px rgba(0, 0, 7, 0.274);
+  text-align: center;
+}
+
+.upper {
+  font-family: $headerFont;
+  font-size: 30px;
+}
+
+.p {
+  font-style: linear-gradient(
+    to right,
+    rgb(252, 50, 0) 0%,
+    rgb(18, 17, 74) 50%
+  );
+}

@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
+
+$button: linear-gradient(to right, rgb(252, 50, 0) 0%, rgb(18, 17, 74) 50%);
+
+$headerFont: "Staatliches", cursive;
+$navlinksFontColor: black;
+
+.sign {
+  text-align: center;
+  padding-top: 40px;
+  color: #292828fb;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: lighter;
+  font-size: 17px;
+  vertical-align: 20px;
+}
+
+.submit {
+  cursor: pointer;
+  border-radius: 0px;
+  color: #fff;
+  background: $button;
+  border: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  margin-top: 30px;
+  font-family: $headerFont;
+  text-decoration: none;
+  font-size: 15px;
+  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+  width: 90%;
+}
+
+.error {
+  padding-top: 20px;
+  font-size: 17px;
+  color: tomato;
+}
+
+.bigerror {
+  font-size: 100px;
+  color: rgb(7, 6, 6);
+  border-style: groove;
+  background-color: rgba(255, 255, 255, 0.856);
+}
+
+.upperForm {
+  padding: 25px;
+}
+
+.signup {
+  padding-top: 35px;
+  font-size: 12px;
+
+  :link {
+    color: $navlinksFontColor;
+  }
+  :visited {
+    text-decoration: none;
+    color: $navlinksFontColor;
+  }
+  :hover {
+    color: rgb(16, 16, 133);
+  }
+}
