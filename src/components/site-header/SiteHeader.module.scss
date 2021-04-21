@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
+$headerFontColor: white;
+$headerBGColor: linear-gradient(75deg, rgb(252, 50, 0) 0%, rgb(18, 17, 74) 50%);
+$navlinksFontColor: black;
+.container {
+  overflow: hidden;
+  width: 100%;
+  height: fit-content;
+  background: $headerBGColor;
+  text-align: right;
+  position: fixed;
+  top: 0;
+}
+.signIn {
+  :link {
+    font-family: "Staatliches", cursive;
+    padding-right: 1.25em;
+    text-decoration: none;
+    font-size: 1.25em;
+  }
+  :visited {
+    text-decoration: none;
+    color: $headerFontColor;
+  }
+}
+.nav {
+  display: flex;
+  align-items: center;
+  background: white;
+}
+.navLinks {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  :link {
+    color: $navlinksFontColor;
+    font-family: "Staatliches", cursive;
+    font-size: 1.4em;
+    text-decoration: none;
+    padding-right: 1.5em;
+  } 
+  :visited {
+    text-decoration: none;
+    color: $navlinksFontColor;
+  }
+  :hover {
+    color: blue;
+  }
+}
+.email {
+  color: rgb(223, 215, 215);
+  justify-content: space-between 30px;
+  padding-left: 30px;
+  font-family: 'Staatliches', cursive;
+  text-decoration: none;
+  align-items: center;
+}
+.icon {
+  background: white;
+  color: $navlinksFontColor;
+  padding-right: 1em;
+  font-size: 2em;
+  padding-bottom: .30em;
+  :visited {
+    text-decoration: none;
+    color: $navlinksFontColor;
+  }
+}
