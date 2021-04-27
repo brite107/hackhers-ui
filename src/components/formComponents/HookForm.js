@@ -11,11 +11,13 @@ const Form = ({
       <form onSubmit={onSubmit} className={className} noValidate>
         <h1 className="mb-4 fw-normal text-center">{title}</h1>
         {children}
-        <SubmitButton
-          className="btn btn-lg btn-dark mt-5 w-100"
-          text="Create Account"
-          disabled={submitting}
-        />
+        <div className={styles.submit}>
+          <SubmitButton
+            className={styles.btn}
+            text="Create Account"
+            disabled={submitting}
+          />
+        </div>
       </form>
     </div>
   </Container>

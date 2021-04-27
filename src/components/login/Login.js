@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import axios from 'axios';
-import Field from '../form/Field';
 import Form from '../form/Form';
+import Input from '../formComponents/Input';
 import styles from './Login.module.scss';
+import LoadingSpinner from '../spinner/LoadingSpinner';
 
 /**
  * @name Login
@@ -16,6 +17,7 @@ const Login = (props) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [isLoaded, setIsLoaded] =useState(true);
 
   const history = useHistory();
 
@@ -25,6 +27,7 @@ const Login = (props) => {
    * It also sets the state of loggedIn and email, so that they can be passed to the navigation bar.
    */
   const getLoggedIn = async () => {
+    setIsLoaded(false);
     try {
       await axios({
         method: 'POST',
@@ -39,6 +42,7 @@ const Login = (props) => {
         sessionStorage.setItem('userEmail', email);
         props.setEmail(email);
         if (response.status === 200) {
+          setIsLoaded(true);
           sessionStorage.setItem('loggedIn', true);
           props.setLoggedIn(true);
           setError('');
@@ -46,16 +50,20 @@ const Login = (props) => {
         }
       });
     } catch (err) {
+      setIsLoaded(true);
       setError('Invalid username or password');
     }
   };
 
   return (
     <div>
+      {isLoaded ? null : (
+        <LoadingSpinner/>
+      )}
       <Form>
         <div className={styles.error}>{error}</div>
         <div className={styles.upperForm}>
-          <Field
+          <Input
             label="Email"
             id="email-input"
             name="email"
@@ -64,7 +72,7 @@ const Login = (props) => {
             onChange={(e) => setEmail(e.target.value)}
           />
           <div />
-          <Field
+          <Input
             label="Password"
             id="password-input"
             name="password"

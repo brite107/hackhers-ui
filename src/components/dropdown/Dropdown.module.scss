@@ -1,0 +1,67 @@
+@import '../../scss/variables';
+.drop {
+  font-family: sans-serif;
+}
+.container {
+  width: 100%;
+  margin-left: 25em;
+  margin-right: 55em;
+  display: flex;
+  padding-right: 1.5em;
+  :link {
+    color: $navlinksFontColor;
+    font-family: $fontStack;
+    font-size: 1.4em;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  :visited {
+    text-decoration: none;
+    color: $navlinksFontColor;
+  }
+  :hover{
+    color: blue;
+}
+}
+/*includes the main links*/
+
+.menuitem {
+  width: 150px;
+}
+.submenu {
+  position: absolute;
+  top: 6.3em;
+  padding: 1em;
+  background-color:white;
+  border-radius: 1px 1px 10px 10px;
+
+}
+.submenucontainer1 {
+  :link {
+    font-size: 1em;
+    font-weight: 300;
+}
+}
+.submenucontainer2 {
+      :link {
+        font-size: 1em;
+        font-weight: 300;
+    }
+}
+h3 {
+    color: $navlinksFontColor;
+    font-family: $fontStack;
+    font-weight: bold;
+    font-size: 1.2em;
+    text-align:start;
+  }
+.submenuitem {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  :visited {
+    text-decoration: none;
+    color: $navlinksFontColor;
+  }
+
+}

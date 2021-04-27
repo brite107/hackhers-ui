@@ -1,0 +1,20 @@
+@import '../../scss/variables';
+
+.container {
+    padding-top: 2em;
+    margin-bottom: auto;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    min-height: 85.35vh;
+    height: calc(100% - 3.05em);
+    margin-bottom: 0px;
+}
+
+.nothing {
+    font-family: $fontStack;
+}
+
+.add {
+    font-family: $fontStack;
+}

@@ -10,11 +10,13 @@ import styles from './Form.module.scss';
  * to determine what will happen when the form submits.
  */
 const Form = ({ children, onSubmit }) => (
-  <form className={styles.main} onSubmit={onSubmit}>
-    <div className={styles.upper}>Log In</div>
-    {children}
-    <div className={styles.lower} />
-  </form>
+  <div className={styles.container}>
+    <form className={styles.main} onSubmit={onSubmit}>
+      <div className={styles.upper}>Sign In</div>
+      {children}
+      <div className={styles.lower} />
+    </form>
+  </div>
 );
 
 export default Form;
