@@ -2,7 +2,7 @@ import React from 'react';
 import ErrorMessage from './ErrorMessage';
 
 const Input = ({
-  label, type, name, id, placeholder, register, error
+  label, type, name, id, placeholder, register, error, onChange
 }) => (
   <div className="form-group mb-3">
     <label htmlFor={id}>
@@ -15,9 +15,9 @@ const Input = ({
       placeholder={placeholder}
       className={`form-control ${error && 'is-invalid'}`}
       ref={register}
+      onChange={onChange}
     />
     {error && <ErrorMessage error={error} />}
   </div>
 );
-
 export default Input;

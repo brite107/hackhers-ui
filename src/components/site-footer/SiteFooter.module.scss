@@ -1,0 +1,18 @@
+@import '../../scss/variables';
+
+.container {
+    position: absolute;
+    height: 3.05em;
+    width: 100%;
+    margin-bottom: -3.05em;
+    text-align: center;
+    background: $headerBGColor;
+}
+
+.footer {
+    font-family: $fontStack;
+    color: $headerFontColor;
+    font-size: 1.20em;
+    text-decoration: none;
+    margin-top: .5em;
+}

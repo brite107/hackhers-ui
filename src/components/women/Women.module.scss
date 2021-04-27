@@ -1,3 +1,13 @@
+@import '../../scss/variables';
+
 .demographics {
-  font-weight: inherit;
+  padding-top: 1.25em;
+  font-weight: bold;
+  font-family: $fontStack;
+}
+
+.container {
+  min-height: 85.35vh;
+  height: calc(100% - 3.05em);
+  margin-bottom: 0px;
 }

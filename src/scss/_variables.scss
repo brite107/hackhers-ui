@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Mukta:wght@400;500;600;700&family=Mulish:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&family=Roboto:wght@400;500;900&display=swap');
+
+$fontStack: "Roboto", sans-serif;
+$headerFontColor: white;
+$headerBGColor: linear-gradient(75deg, rgb(252, 50, 0) 0%, rgb(18, 17, 74) 50%);
+$navlinksFontColor: black;
+$fontAccentColor: #12114a;
+$button: linear-gradient(to right, rgb(252, 50, 0) 0%, rgb(18, 17, 74) 50%);
+$padding:5px 7em; 
+$font-size:16px; 
+$border: none; 
+$border-radius:0px;  
+$font-color:white;
+$formPageBGColors:rgb(53,233,254);
+$formPageBGGradient: linear-gradient(90deg, rgba(53,233,254,0.5382528011204482) 0%, rgba(251,180,236,0.6250875350140056) 100%);
+
+@use 'forms';
+@use 'buttons';

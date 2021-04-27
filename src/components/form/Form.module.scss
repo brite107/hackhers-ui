@@ -1,5 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
-$headerFont: "Staatliches", cursive;
+@import '../../scss/variables';
+
+.container {
+  padding-top: 6em;
+  min-height: 85.35vh;
+  height: calc(100% - 3.05em);
+  background: $formPageBGColors;
+  background: $formPageBGGradient;
+}
 
 .main {
   padding-top: 1.3em;
@@ -13,14 +20,6 @@ $headerFont: "Staatliches", cursive;
 }
 
 .upper {
-  font-family: $headerFont;
+  font-family: $fontStack;
   font-size: 30px;
-}
-
-.p {
-  font-style: linear-gradient(
-    to right,
-    rgb(252, 50, 0) 0%,
-    rgb(18, 17, 74) 50%
-  );
 }

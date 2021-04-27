@@ -1,6 +1,15 @@
+@import '../../scss/variables';
 .App {
+  position:relative;
   text-align: center;
   margin-top: 5.5em;
   background-color: rgb(241, 241, 241);
-  height: 100em;
+}
+
+body {
+  min-height: 100vh;
+  height: calc(100% - 3.05em);
+  margin-bottom: 0px;
+  display: flex;
+  flex-direction: column;
 }

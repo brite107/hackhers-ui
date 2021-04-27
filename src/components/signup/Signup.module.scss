@@ -1,0 +1,13 @@
+@import '../../scss/variables';
+
+.Signup {
+    min-height: 100vh;
+    height: calc(100% - 3.05em);
+    background: $formPageBGColors;
+    background: $formPageBGGradient;
+    margin-bottom: -3.05em;
+}
+
+.container {
+    padding-top: 1em;
+}

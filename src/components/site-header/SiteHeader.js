@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { RiShoppingBagLine } from 'react-icons/ri';
+import { Col, Row } from 'react-bootstrap';
 import Logo from '../logo/Logo';
 import styles from './SiteHeader.module.scss';
-
 /**
  * @name SiteHeader
  * @description The SiteHeader is a functional component that
@@ -16,39 +16,44 @@ import styles from './SiteHeader.module.scss';
  * @returns a header that contains navigation links.
  */
 const SiteHeader = ({
-  email, isLoggedIn, handleLogout
+  email, isLoggedIn, handleLogout, dropdown
 }) => (
   <div className={styles.container}>
     <div className={styles.signIn}>
       {isLoggedIn ? (
         <div className={styles.email}>
           {email}
-          <Link to="/" onClick={handleLogout} className={styles.email}>
-            Logout
+          <Link to="/" onClick={handleLogout}>
+            LOGOUT
           </Link>
         </div>
       ) : (
         <div>
-          <Link to="/login"> Sign In </Link>
+          <Link to="/login"> SIGN IN </Link>
         </div>
       )}
     </div>
     <nav className={styles.nav}>
-      <Link to="/">
-        <Logo />
-      </Link>
-      <div className={styles.navLinks}>
-        <Link to="/men"> MEN </Link>
-        <Link to="/women"> WOMEN </Link>
-        <Link to="/kids"> KIDS </Link>
-      </div>
-      <div className={styles.icon}>
-        <Link to="/shoppingCart">
-          <RiShoppingBagLine />
-        </Link>
-      </div>
+      <Row className="my-auto">
+        <Col lg="2">
+          <Link to="/">
+            <Logo />
+          </Link>
+        </Col>
+        <Col lg="8" className="my-auto">
+          <div className={styles.navLinks}>
+            {dropdown}
+          </div>
+        </Col>
+        <Col lg="2">
+          <div className={styles.icon}>
+            <Link to="/shoppingCart">
+              <RiShoppingBagLine />
+            </Link>
+          </div>
+        </Col>
+      </Row>
     </nav>
   </div>
 );
-
 export default SiteHeader;
