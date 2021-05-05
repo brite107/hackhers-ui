@@ -31,7 +31,7 @@ export default function App() {
       opacity: 1,
       rotateX: 0,
       transition: {
-        duration: 0.5
+        duration: 0.25
       },
       display: 'block'
     },
@@ -39,8 +39,8 @@ export default function App() {
       opacity: 0,
       rotateX: -15,
       transition: {
-        duration: 0.5,
-        delay: 0.3
+        duration: 0.25,
+        delay: 0
       },
       transitionEnd: {
         display: 'none'
@@ -56,7 +56,7 @@ export default function App() {
             onHoverStart={toggleHoverMenu}
             onHoverEnd={toggleHoverMenu}
           >
-            <Link to="/Men">MEN</Link>
+            <Link to="/products/Men">MEN</Link>
             <motion.div
               className={styles.submenu}
               initial="exit"
@@ -66,38 +66,38 @@ export default function App() {
               <Row className={styles.submenubackground}>
                 <Col className={styles.submenucontainer1}>
                   <h3>CATEGORIES</h3>
-                  <Link to="/products/men/baseball" className={styles.submenuitem}>Baseball</Link>
-                  <Link to="/products/men/basketball" className={styles.submenuitem}>Basketball</Link>
-                  <Link to="/products/men/boxing" className={styles.submenuitem}>Boxing</Link>
-                  <Link to="/products/men/football" className={styles.submenuitem}>Football</Link>
-                  <Link to="/products/men/golf" className={styles.submenuitem}>Golf</Link>
-                  <Link to="/products/men/hockey" className={styles.submenuitem}>Hockey</Link>
-                  <Link to="/products/men/running" className={styles.submenuitem}>Running</Link>
-                  <Link to="/products/men/skateboarding" className={styles.submenuitem}>Skateboarding</Link>
-                  <Link to="/products/men/soccer" className={styles.submenuitem}>Soccer</Link>
-                  <Link to="/products/men/weightlifting" className={styles.submenuitem}>Weightlifting</Link>
+                  <Link to="/products/Men/category/Baseball" className={styles.submenuitem}>Baseball</Link>
+                  <Link to="/products/Men/category/Basketball" className={styles.submenuitem}>Basketball</Link>
+                  <Link to="/products/Men/category/Boxing" className={styles.submenuitem}>Boxing</Link>
+                  <Link to="/products/Men/category/Football" className={styles.submenuitem}>Football</Link>
+                  <Link to="/products/Men/category/Golf" className={styles.submenuitem}>Golf</Link>
+                  <Link to="/products/Men/category/Hockey" className={styles.submenuitem}>Hockey</Link>
+                  <Link to="/products/Men/category/Running" className={styles.submenuitem}>Running</Link>
+                  <Link to="/products/Men/category/Skateboarding" className={styles.submenuitem}>Skateboarding</Link>
+                  <Link to="/products/Men/category/Soccer" className={styles.submenuitem}>Soccer</Link>
+                  <Link to="/products/Men/category/Weightlifting" className={styles.submenuitem}>Weightlifting</Link>
                 </Col>
                 <Col className={styles.submenucontainer2}>
                   <h3>TYPES</h3>
-                  <Link to="/products/men/belt" className={styles.submenuitem}>Belt</Link>
-                  <Link to="/products/men/elbowpad" className={styles.submenuitem}>Elbow Pad</Link>
-                  <Link to="/products/men/flipflop" className={styles.submenuitem}>Flip Flop</Link>
-                  <Link to="/products/men/glove" className={styles.submenuitem}>Glove</Link>
-                  <Link to="/products/men/hat" className={styles.submenuitem}>Hat</Link>
-                  <Link to="/products/men/headband" className={styles.submenuitem}>Headband</Link>
-                  <Link to="/products/men/helmet" className={styles.submenuitem}>Helmet</Link>
-                  <Link to="/products/men/hoodie" className={styles.submenuitem}>Hoodie</Link>
-                  <Link to="/products/men/jacket" className={styles.submenuitem}>Jacket</Link>
-                  <Link to="/products/men/pant" className={styles.submenuitem}>Pant</Link>
-                  <Link to="/products/men/poolnoodle" className={styles.submenuitem}>Pool Noodle</Link>
-                  <Link to="/products/men/shinguard" className={styles.submenuitem}>Shin Guard</Link>
-                  <Link to="/products/men/shoe" className={styles.submenuitem}>Shoe</Link>
-                  <Link to="/products/men/short" className={styles.submenuitem}>Short</Link>
-                  <Link to="/products/men/sock" className={styles.submenuitem}>Sock</Link>
-                  <Link to="/products/men/sunglasses" className={styles.submenuitem}>Sunglasses</Link>
-                  <Link to="/products/men/tanktop" className={styles.submenuitem}>Tank Top</Link>
-                  <Link to="/products/men/visor" className={styles.submenuitem}>Visor</Link>
-                  <Link to="/products/men/wristband" className={styles.submenuitem}>Wristband</Link>
+                  <Link to="/products/Men/type/Belt" className={styles.submenuitem}>Belt</Link>
+                  <Link to="/products/Men/type/Elbow+Pad" className={styles.submenuitem}>Elbow Pad</Link>
+                  <Link to="/products/Men/type/Flip+Flop" className={styles.submenuitem}>Flip Flop</Link>
+                  <Link to="/products/Men/type/Glove" className={styles.submenuitem}>Glove</Link>
+                  <Link to="/products/Men/type/Hat" className={styles.submenuitem}>Hat</Link>
+                  <Link to="/products/Men/type/Headband" className={styles.submenuitem}>Headband</Link>
+                  <Link to="/products/Men/type/Helmet" className={styles.submenuitem}>Helmet</Link>
+                  <Link to="/products/Men/type/Hoodie" className={styles.submenuitem}>Hoodie</Link>
+                  <Link to="/products/Men/type/Jacket" className={styles.submenuitem}>Jacket</Link>
+                  <Link to="/products/Men/type/Pant" className={styles.submenuitem}>Pant</Link>
+                  <Link to="/products/Men/type/Pool+Noodle" className={styles.submenuitem}>Pool Noodle</Link>
+                  <Link to="/products/Men/type/Shin+Guard" className={styles.submenuitem}>Shin Guard</Link>
+                  <Link to="/products/Men/type/Shoe" className={styles.submenuitem}>Shoe</Link>
+                  <Link to="/products/Men/type/Short" className={styles.submenuitem}>Short</Link>
+                  <Link to="/products/Men/type/Sock" className={styles.submenuitem}>Sock</Link>
+                  <Link to="/products/Men/type/Sunglasses" className={styles.submenuitem}>Sunglasses</Link>
+                  <Link to="/products/Men/type/Tank+Top" className={styles.submenuitem}>Tank Top</Link>
+                  <Link to="/products/Men/type/Visor" className={styles.submenuitem}>Visor</Link>
+                  <Link to="/products/Men/type/Wristband" className={styles.submenuitem}>Wristband</Link>
                 </Col>
               </Row>
             </motion.div>
@@ -109,7 +109,7 @@ export default function App() {
             onMouseEnter={toggleMouseMenu}
             onMouseLeave={toggleMouseMenu}
           >
-            <Link to="/Women">WOMEN</Link>
+            <Link to="/products/Women">WOMEN</Link>
             <motion.div
               className={styles.submenu}
               initial="exit"
@@ -119,38 +119,38 @@ export default function App() {
               <Row className={styles.submenubackground}>
                 <Col className={styles.submenucontainer1}>
                   <h3>CATEGORIES</h3>
-                  <Link to="/products/women/baseball" className={styles.submenuitem}>Baseball</Link>
-                  <Link to="/products/women/basketball" className={styles.submenuitem}>Basketball</Link>
-                  <Link to="/products/women/boxing" className={styles.submenuitem}>Boxing</Link>
-                  <Link to="/products/women/football" className={styles.submenuitem}>Football</Link>
-                  <Link to="/products/women/golf" className={styles.submenuitem}>Golf</Link>
-                  <Link to="/products/women/hockey" className={styles.submenuitem}>Hockey</Link>
-                  <Link to="/products/women/running" className={styles.submenuitem}>Running</Link>
-                  <Link to="/products/women/skateboarding" className={styles.submenuitem}>Skateboarding</Link>
-                  <Link to="/products/women/soccer" className={styles.submenuitem}>Soccer</Link>
-                  <Link to="/products/women/weightlifting" className={styles.submenuitem}>Weightlifting</Link>
+                  <Link to="/products/Women/category/Baseball" className={styles.submenuitem}>Baseball</Link>
+                  <Link to="/products/Women/category/Basketball" className={styles.submenuitem}>Basketball</Link>
+                  <Link to="/products/Women/category/Boxing" className={styles.submenuitem}>Boxing</Link>
+                  <Link to="/products/Women/category/Football" className={styles.submenuitem}>Football</Link>
+                  <Link to="/products/Women/category/Golf" className={styles.submenuitem}>Golf</Link>
+                  <Link to="/products/Women/category/Hockey" className={styles.submenuitem}>Hockey</Link>
+                  <Link to="/products/Women/category/Running" className={styles.submenuitem}>Running</Link>
+                  <Link to="/products/Women/category/Skateboarding" className={styles.submenuitem}>Skateboarding</Link>
+                  <Link to="/products/Women/category/Soccer" className={styles.submenuitem}>Soccer</Link>
+                  <Link to="/products/Women/category/Weightlifting" className={styles.submenuitem}>Weightlifting</Link>
                 </Col>
                 <Col className={styles.submenucontainer2}>
                   <h3>TYPES</h3>
-                  <Link to="/products/women/belt" className={styles.submenuitem}>Belt</Link>
-                  <Link to="/products/women/elbowpad" className={styles.submenuitem}>Elbow Pad</Link>
-                  <Link to="/products/women/flipflop" className={styles.submenuitem}>Flip Flop</Link>
-                  <Link to="/products/women/glove" className={styles.submenuitem}>Glove</Link>
-                  <Link to="/products/women/hat" className={styles.submenuitem}>Hat</Link>
-                  <Link to="/products/women/headband" className={styles.submenuitem}>Headband</Link>
-                  <Link to="/products/women/helmet" className={styles.submenuitem}>Helmet</Link>
-                  <Link to="/products/women/hoodie" className={styles.submenuitem}>Hoodie</Link>
-                  <Link to="/products/women/jacket" className={styles.submenuitem}>Jacket</Link>
-                  <Link to="/products/women/pant" className={styles.submenuitem}>Pant</Link>
-                  <Link to="/products/women/poolnoodle" className={styles.submenuitem}>Pool Noodle</Link>
-                  <Link to="/products/women/shinguard" className={styles.submenuitem}>Shin Guard</Link>
-                  <Link to="/products/women/shoe" className={styles.submenuitem}>Shoe</Link>
-                  <Link to="/products/women/short" className={styles.submenuitem}>Short</Link>
-                  <Link to="/products/women/sock" className={styles.submenuitem}>Sock</Link>
-                  <Link to="/products/women/sunglasses" className={styles.submenuitem}>Sunglasses</Link>
-                  <Link to="/products/women/tanktop" className={styles.submenuitem}>Tank Top</Link>
-                  <Link to="/products/women/visor" className={styles.submenuitem}>Visor</Link>
-                  <Link to="/products/women/wristband" className={styles.submenuitem}>Wristband</Link>
+                  <Link to="/products/Women/type/Belt" className={styles.submenuitem}>Belt</Link>
+                  <Link to="/products/Women/type/Elbow+Pad" className={styles.submenuitem}>Elbow Pad</Link>
+                  <Link to="/products/Women/type/Flip+Flop" className={styles.submenuitem}>Flip Flop</Link>
+                  <Link to="/products/Women/type/Glove" className={styles.submenuitem}>Glove</Link>
+                  <Link to="/products/Women/type/Hat" className={styles.submenuitem}>Hat</Link>
+                  <Link to="/products/Women/type/Headband" className={styles.submenuitem}>Headband</Link>
+                  <Link to="/products/Women/type/Helmet" className={styles.submenuitem}>Helmet</Link>
+                  <Link to="/products/Women/type/Hoodie" className={styles.submenuitem}>Hoodie</Link>
+                  <Link to="/products/Women/type/Jacket" className={styles.submenuitem}>Jacket</Link>
+                  <Link to="/products/Women/type/Pant" className={styles.submenuitem}>Pant</Link>
+                  <Link to="/products/Women/type/Pool+Noodle" className={styles.submenuitem}>Pool Noodle</Link>
+                  <Link to="/products/Women/type/Shin+Guard" className={styles.submenuitem}>Shin Guard</Link>
+                  <Link to="/products/Women/type/Shoe" className={styles.submenuitem}>Shoe</Link>
+                  <Link to="/products/Women/type/Short" className={styles.submenuitem}>Short</Link>
+                  <Link to="/products/Women/type/Sock" className={styles.submenuitem}>Sock</Link>
+                  <Link to="/products/Women/type/Sunglasses" className={styles.submenuitem}>Sunglasses</Link>
+                  <Link to="/products/Women/type/Tank+Top" className={styles.submenuitem}>Tank Top</Link>
+                  <Link to="/products/Women/type/Visor" className={styles.submenuitem}>Visor</Link>
+                  <Link to="/products/Women/type/Wristband" className={styles.submenuitem}>Wristband</Link>
                 </Col>
               </Row>
             </motion.div>
@@ -162,7 +162,7 @@ export default function App() {
             onMouseOver={toggleOverMenu}
             onMouseOut={toggleOverMenu}
           >
-            <Link to="/Kids">KIDS</Link>
+            <Link to="/products/Kids">KIDS</Link>
             <motion.div
               className={styles.submenu}
               initial="exit"
@@ -172,38 +172,38 @@ export default function App() {
               <Row className={styles.submenubackground}>
                 <Col className={styles.submenucontainer1}>
                   <h3>CATEGORIES</h3>
-                  <Link to="/products/kids/baseball" className={styles.submenuitem}>Baseball</Link>
-                  <Link to="/products/kids/basketball" className={styles.submenuitem}>Basketball</Link>
-                  <Link to="/products/kids/boxing" className={styles.submenuitem}>Boxing</Link>
-                  <Link to="/products/kids/football" className={styles.submenuitem}>Football</Link>
-                  <Link to="/products/kids/golf" className={styles.submenuitem}>Golf</Link>
-                  <Link to="/products/kids/hockey" className={styles.submenuitem}>Hockey</Link>
-                  <Link to="/products/kids/running" className={styles.submenuitem}>Running</Link>
-                  <Link to="/products/kids/skateboarding" className={styles.submenuitem}>Skateboarding</Link>
-                  <Link to="/products/kids/soccer" className={styles.submenuitem}>Soccer</Link>
-                  <Link to="/products/kids/weightlifting" className={styles.submenuitem}>Weightlifting</Link>
+                  <Link to="/products/Kids/category/Baseball" className={styles.submenuitem}>Baseball</Link>
+                  <Link to="/products/Kids/category/Basketball" className={styles.submenuitem}>Basketball</Link>
+                  <Link to="/products/Kids/category/Boxing" className={styles.submenuitem}>Boxing</Link>
+                  <Link to="/products/Kids/category/Football" className={styles.submenuitem}>Football</Link>
+                  <Link to="/products/Kids/category/Golf" className={styles.submenuitem}>Golf</Link>
+                  <Link to="/products/Kids/category/Hockey" className={styles.submenuitem}>Hockey</Link>
+                  <Link to="/products/Kids/category/Running" className={styles.submenuitem}>Running</Link>
+                  <Link to="/products/Kids/category/Skateboarding" className={styles.submenuitem}>Skateboarding</Link>
+                  <Link to="/products/Kids/category/Soccer" className={styles.submenuitem}>Soccer</Link>
+                  <Link to="/products/Kids/category/Weightlifting" className={styles.submenuitem}>Weightlifting</Link>
                 </Col>
                 <Col className={styles.submenucontainer2}>
                   <h3>TYPES</h3>
-                  <Link to="/products/kids/belt" className={styles.submenuitem}>Belt</Link>
-                  <Link to="/products/kids/elbowpad" className={styles.submenuitem}>Elbow Pad</Link>
-                  <Link to="/products/kids/flipflop" className={styles.submenuitem}>Flip Flop</Link>
-                  <Link to="/products/kids/glove" className={styles.submenuitem}>Glove</Link>
-                  <Link to="/products/kids/hat" className={styles.submenuitem}>Hat</Link>
-                  <Link to="/products/kids/headband" className={styles.submenuitem}>Headband</Link>
-                  <Link to="/products/kids/helmet" className={styles.submenuitem}>Helmet</Link>
-                  <Link to="/products/kids/hoodie" className={styles.submenuitem}>Hoodie</Link>
-                  <Link to="/products/kids/jacket" className={styles.submenuitem}>Jacket</Link>
-                  <Link to="/products/kids/pant" className={styles.submenuitem}>Pant</Link>
-                  <Link to="/products/kids/poolnoodle" className={styles.submenuitem}>Pool Noodle</Link>
-                  <Link to="/products/kids/shinguard" className={styles.submenuitem}>Shin Guard</Link>
-                  <Link to="/products/kids/shoe" className={styles.submenuitem}>Shoe</Link>
-                  <Link to="/products/kids/short" className={styles.submenuitem}>Short</Link>
-                  <Link to="/products/kids/sock" className={styles.submenuitem}>Sock</Link>
-                  <Link to="/products/kids/sunglasses" className={styles.submenuitem}>Sunglasses</Link>
-                  <Link to="/products/kids/tanktop" className={styles.submenuitem}>Tank Top</Link>
-                  <Link to="/products/kids/visor" className={styles.submenuitem}>Visor</Link>
-                  <Link to="/products/kids/wristband" className={styles.submenuitem}>Wristband</Link>
+                  <Link to="/products/Kids/type/Belt" className={styles.submenuitem}>Belt</Link>
+                  <Link to="/products/Kids/type/Elbow+Pad" className={styles.submenuitem}>Elbow Pad</Link>
+                  <Link to="/products/Kids/type/Flip+Flop" className={styles.submenuitem}>Flip Flop</Link>
+                  <Link to="/products/Kids/type/Glove" className={styles.submenuitem}>Glove</Link>
+                  <Link to="/products/Kids/type/Hat" className={styles.submenuitem}>Hat</Link>
+                  <Link to="/products/Kids/type/Headband" className={styles.submenuitem}>Headband</Link>
+                  <Link to="/products/Kids/type/Helmet" className={styles.submenuitem}>Helmet</Link>
+                  <Link to="/products/Kids/type/Hoodie" className={styles.submenuitem}>Hoodie</Link>
+                  <Link to="/products/Kids/type/Jacket" className={styles.submenuitem}>Jacket</Link>
+                  <Link to="/products/Kids/type/Pant" className={styles.submenuitem}>Pant</Link>
+                  <Link to="/products/Kids/type/Pool+Noodle" className={styles.submenuitem}>Pool Noodle</Link>
+                  <Link to="/products/Kids/type/Shin+Guard" className={styles.submenuitem}>Shin Guard</Link>
+                  <Link to="/products/Kids/type/Shoe" className={styles.submenuitem}>Shoe</Link>
+                  <Link to="/products/Kids/type/Short" className={styles.submenuitem}>Short</Link>
+                  <Link to="/products/Kids/type/Sock" className={styles.submenuitem}>Sock</Link>
+                  <Link to="/products/Kids/type/Sunglasses" className={styles.submenuitem}>Sunglasses</Link>
+                  <Link to="/products/Kids/type/Tank+Top" className={styles.submenuitem}>Tank Top</Link>
+                  <Link to="/products/Kids/type/Visor" className={styles.submenuitem}>Visor</Link>
+                  <Link to="/products/Kids/type/Wristband" className={styles.submenuitem}>Wristband</Link>
                 </Col>
               </Row>
             </motion.div>

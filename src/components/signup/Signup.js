@@ -11,7 +11,7 @@ import Form from '../formComponents/HookForm';
 import Input from '../formComponents/Input';
 import Select from '../formComponents/Select';
 import styles from './Signup.module.scss';
-import LoadingSpinner from '../spinner/LoadingSpinner';
+import FormLoadingSpinner from '../spinner/FormLoadingSpinner';
 /**
  * This page displays a sign up form
  * @param setLoggedIn a function from the app component that sets the LoggedIn state
@@ -113,7 +113,7 @@ const Signup = ({ setLoggedIn, setEmail }) => {
   return (
     <div className={styles.Signup}>
       {isLoaded ? null : (
-        <LoadingSpinner />
+        <FormLoadingSpinner />
       )}
       <div className={styles.container}>
         <Form

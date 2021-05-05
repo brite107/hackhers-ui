@@ -22,9 +22,12 @@
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-bootstrap": "^1.5.2",
+    "react-circle-progress-bar": "^0.1.4",
     "react-dom": "^16.13.1",
     "react-hook-form": "^6.15.5",
     "react-icons": "^4.2.0",
+    "react-loading-overlay": "^1.0.1",
+    "react-overlay-loading": "^1.0.3",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
     "react-select": "^4.3.0",
@@ -52,5 +55,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "cypress": "^7.2.0"
   }
 }

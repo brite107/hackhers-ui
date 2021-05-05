@@ -10,10 +10,10 @@ import styles from './SiteFooter.module.scss';
  */
 const SiteFooter = () => (
   <div className={styles.container}>
-    <p className={styles.footer}>
+    <footer className={styles.footer}>
       2021 Cool Heat Apparel Inc&nbsp;
       {'\u00A9'}
-    </p>
+    </footer>
   </div>
 );
 

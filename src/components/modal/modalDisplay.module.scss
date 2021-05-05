@@ -1,0 +1,134 @@
+@import "../../scss/variables";
+
+$btn-close-color: red;
+
+
+.close {
+  position: absolute;
+  font-size: 48pt;
+  color:#c02a13;
+  top: 15px;
+  right: 15px;
+  bottom: 15px;
+  width: 40px;
+  height: 40px;
+  &:hover {
+    opacity: 0.75;
+  }
+  &:close {
+    opacity: 1;
+  }
+}
+
+.modal {
+  justify-content: center;
+  width: 50em;
+}
+
+.container {
+  padding: 0;
+}
+
+.image {
+  height: 600px;
+  width: 600px;
+}
+
+.body {
+  padding: 0;
+}
+
+.name {
+  font-family: $fontStack;
+  font-weight: bold;
+  font-size: 30px;
+  height: 125px;
+  margin-right: 25px;
+  padding-top: 2em;
+  padding-left: 50px;
+  height: 160px;
+}
+
+.price {
+  font-family: $fontStack;
+  font-size: 26px;
+  height: 80px;
+  font-weight: bold;
+  padding-left: 80px;
+  color: green;
+}
+
+.description {
+  font-family: $fontStack;
+  font-size: 24px;
+  height: 120px;
+  padding-left: 80px;
+  margin-right: 25px;
+}
+
+.demographics {
+  font-family: $fontStack;
+  font-size: 24px;
+  height: 75px;
+  padding-left: 80px;
+  height: 50px;
+}
+
+.category {
+  font-family: $fontStack;
+  font-size: 22px;
+  height: 50px;
+  padding-left: 80px;  
+}
+
+.type {
+  font-family: $fontStack;
+  font-size: 22px;
+  height: 80px;
+  padding-left: 80px;
+}
+
+.buttonCart {
+  position: absolute;
+  cursor: pointer;
+  align-items: center;
+  justify-items: center;
+  border-radius: 0px;
+  color: #fff;
+  background: $button;
+  border: 0;
+  padding-bottom: 8px;
+  padding-top: 8px;
+  margin-bottom: 15px;
+  margin-left: 50px;
+  margin-right: 15px;
+  font-family: $fontStack;
+  text-decoration: none;
+  font-size: 1.1em;
+  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+  width: 42%;
+  &:hover {
+    opacity: 0.75;
+  }
+}
+
+.buttonDetails {
+  cursor: pointer;
+  align-items: center;
+  justify-items: center;
+  border-radius: 0px;
+  color: #fff;
+  background: $button;
+  border: 0;
+  padding-bottom: 7px;
+  padding-top: 7px;
+  margin-top: 10px;
+  font-family: $fontStack;
+  text-decoration: none;
+  font-size: 1.1em;
+  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+  width: 100%;
+  &:hover {
+    opacity: 0.75;
+  }
+}

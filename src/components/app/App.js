@@ -5,9 +5,6 @@ import {
   Switch
 } from 'react-router-dom';
 import Homepage from '../homepage/Homepage';
-import Men from '../men/Men';
-import Kids from '../kids/Kids';
-import Women from '../women/Women';
 import Login from '../login/Login';
 import Signup from '../signup/Signup';
 import SiteHeader from '../site-header/SiteHeader';
@@ -17,6 +14,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import SiteFooter from '../site-footer/SiteFooter';
 import Dropdown from '../dropdown/Dropdown';
 import ProductsDisplay from '../productsDisplay/ProductsDisplay';
+import DemoDisplay from '../productsDisplay/DemoDisplay';
 import ShoppingCart from '../shoppingCart/ShoppingCart';
 
 const App = () => {
@@ -72,10 +70,8 @@ const App = () => {
             )}
           />
           <Route path="/signup" exact render={() => <Signup email={email} setEmail={setEmail} setLoggedIn={setLoggedIn} />} />
-          <Route path="/men" component={Men} exact />
-          <Route path="/women" component={Women} exact />
-          <Route path="/kids" component={Kids} exact />
-          <Route path="/products/:demographic/:group" component={ProductsDisplay} />
+          <Route path="/products/:demographic/:group/:value" component={ProductsDisplay} />
+          <Route path="/products/:demographic" component={DemoDisplay} />
           <Route path="/shoppingCart" component={ShoppingCart} exact />
         </Switch>
       </div>

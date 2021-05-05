@@ -1,0 +1,11 @@
+{
+    "baseURL": "http://localhost:8080",
+    "env": {
+        "email": "hedmunds@mail.com",
+        "password": "I@mHeidi4",
+        "wrongPassword": "IamNotHeidi",
+        "emailNotInDB": "billgates@mail.com",
+        "passwordNotInDB": "Password1234#"
+    }
+    
+}

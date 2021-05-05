@@ -8,7 +8,9 @@
   
       "airbnb/hooks",
   
-      "plugin:jsx-a11y/recommended"
+      "plugin:jsx-a11y/recommended",
+
+      "plugin:cypress/recommended"
   
     ],
   

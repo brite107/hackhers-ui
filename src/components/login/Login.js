@@ -4,7 +4,7 @@ import axios from 'axios';
 import Form from '../form/Form';
 import Input from '../formComponents/Input';
 import styles from './Login.module.scss';
-import LoadingSpinner from '../spinner/LoadingSpinner';
+import FormLoadingSpinner from '../spinner/FormLoadingSpinner';
 
 /**
  * @name Login
@@ -17,7 +17,7 @@ const Login = (props) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const [isLoaded, setIsLoaded] =useState(true);
+  const [isLoaded, setIsLoaded] = useState(true);
 
   const history = useHistory();
 
@@ -41,6 +41,9 @@ const Login = (props) => {
         sessionStorage.setItem('token', token);
         sessionStorage.setItem('userEmail', email);
         props.setEmail(email);
+        setTimeout(() => {
+          setIsLoaded({ isLoaded: false });
+        }, 3000); // TODO: Set to 1.5 seconds for demo
         if (response.status === 200) {
           setIsLoaded(true);
           sessionStorage.setItem('loggedIn', true);
@@ -57,9 +60,11 @@ const Login = (props) => {
 
   return (
     <div>
-      {isLoaded ? null : (
-        <LoadingSpinner/>
-      )}
+      <div className={styles.loader}>
+        {isLoaded ? null : (
+          <FormLoadingSpinner isLoaded={isLoaded.loading} />
+        )}
+      </div>
       <Form>
         <div className={styles.error}>{error}</div>
         <div className={styles.upperForm}>
