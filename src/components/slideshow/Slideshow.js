@@ -5,6 +5,10 @@ import Womens from './Womens.svg';
 import Sunglasses from './sunshades.svg';
 import Guards from './shingaurds.svg';
 import styles from './Slideshow.module.scss';
+import { FaChevronCircleRight } from "react-icons/fa";
+import { FaChevronCircleLeft } from "react-icons/fa";
+
+
 
 /**
  * @name Slideshow
@@ -13,6 +17,8 @@ import styles from './Slideshow.module.scss';
  */
 const Slideshow = () => {
   const history = useHistory();
+
+  //const [nextIcon, setNextIcon] = useState()
 
   const toKids = () => {
     history.push('/products/kids/shinguard');
@@ -27,7 +33,10 @@ const Slideshow = () => {
   };
 
   return (
-    <Carousel className={styles.carousel} nextLabel="" prevLabel="" pause={false} wrap interval={10000}>
+    <div>
+      <div className={styles.margin}>Free shipping on orders over $25</div>
+      <div className={styles.my__carousel_main}>
+    <Carousel className={styles.carousel} nextLabel="" prevLabel="" pause="hover" wrap interval={10000} nextIcon={<FaChevronCircleRight size={50}/>} prevIcon={<FaChevronCircleLeft size={50}/>}>
       <Carousel.Item
         interval={10000}
         onClick={toWomens}
@@ -59,6 +68,7 @@ const Slideshow = () => {
         />
       </Carousel.Item>
     </Carousel>
+    </div></div>
   );
 };
 
