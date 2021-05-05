@@ -4,6 +4,7 @@ import styles from './Kids.module.scss';
 const Kids = () => (
   <div className={styles.container}>
     <h1 className={styles.demographics}>KIDS</h1>
+    <div />
   </div>
 );
 

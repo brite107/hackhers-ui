@@ -3,11 +3,11 @@
 @import "../../scss/variables";
 
 .card {
-  margin: auto;
-  margin-top: 2em;
-  width: 24em;
+  margin-bottom: 5em;
+  margin-left: 3em;
+  width: 32em;
   background: #fff;
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.432), 0 0 10px rgba(0, 0, 0, 0.493);
   transition: 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
     0.3s box-shadow,
     0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
@@ -20,20 +20,33 @@
 }
 
 .title {
-  color: $fontAccentColor;
+  margin-top: -4em;
+  color: navy;
   font-family: $fontStack;
   font-size: 1.5em;
   font-weight: 900;
 }
 
 .cost {
+  margin-top: -5em;
   font-weight: 900;
-  font-size: 1.3em;
+  font-size: 1.7em;
   font-family: $fontStack;
+  color: black;
 }
-
+.cents{
+  font-size: .6em;
+}
 .image {
-  height: 25em;
+  height: auto;
+}
+@import "~bootstrap/scss/bootstrap";
+
+.modal{
+  align-items: center;
+  margin-bottom: 200px;
 }
 
-@import "~bootstrap/scss/bootstrap";
+.details{
+  height: 500px;
+}

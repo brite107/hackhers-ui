@@ -6,14 +6,14 @@ import styles from './ProductDisplay.module.scss';
 import ProductCard from '../card/ProductCard';
 import PageLoadingSpinner from '../spinner/PageLoadingSpinner';
 import ErrorMessage from './ErrorMessage';
-import { buildPath } from '../../utils/Helper';
+import { PRODUCTS_ENDPOINT } from '../../utils/constants';
 
 /**
  * Displays products category and type
  * @returns product category and type
  */
-const ProductsDisplay = () => {
-  const { demographic, group, value } = useParams();
+const DemoDisplay = () => {
+  const { demographic } = useParams();
   const [error, setError] = useState(false);
   const [appState, setAppState] = useState({
     loading: false,
@@ -25,9 +25,8 @@ const ProductsDisplay = () => {
    */
   useEffect(() => {
     setAppState({ loading: true });
-    const path = buildPath(demographic, group, value);
     axios
-      .get(path)
+      .get(`${PRODUCTS_ENDPOINT}?demographic=${demographic}`)
       .then((products) => {
         const allProducts = products.data;
         setAppState({ loading: false, products: allProducts });
@@ -39,7 +38,7 @@ const ProductsDisplay = () => {
           setError(false);
         }, 6000);
       });
-  }, [demographic, group, value]);
+  }, [demographic]);
 
   return (
     <div>
@@ -47,7 +46,7 @@ const ProductsDisplay = () => {
       <div>
         { error ? <ErrorMessage /> : (
           <Row>
-            <h2 className={styles.breadcrumb}>{`${demographic} | ${value}`}</h2>
+            <h2 className={styles.breadcrumb}>{`${demographic}`}</h2>
           </Row>
         )}
       </div>
@@ -68,4 +67,4 @@ const ProductsDisplay = () => {
     </div>
   );
 };
-export default ProductsDisplay;
+export default DemoDisplay;

@@ -10,3 +10,5 @@ export const STATE_ABBREVIATIONS = [
 export const CUSTOMER_ENDPOINT = 'http://localhost:8080/customers';
 
 export const LOGIN_ENDPOINT = 'http://localhost:8080/login';
+
+export const PRODUCTS_ENDPOINT = 'http://localhost:8080/products';

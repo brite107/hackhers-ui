@@ -1,6 +1,28 @@
-.header{
-    min-height: 85.35vh;
+@import '../../scss/variables';
+
+// .row{
+//   display: grid;
+//   grid-template-columns: 1fr 1fr 1fr;
+// }
+.breadcrumb{
     height: calc(100% - 3.05em);
     margin-bottom: 0px;
     padding: 1.25em;
 }
+.error, p {
+    font-family: $fontStack;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: bold;
+    color: rgb(245, 50, 50);
+    padding-top: 5em;
+  }
+  
+  .loader {
+    display:grid;
+    justify-content: center;
+    align-items:center;
+    height:4em;
+    background: $formPageBGColors;
+    background: $formPageBGGradient;
+  }

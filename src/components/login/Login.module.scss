@@ -10,13 +10,22 @@
   padding-right: 20px;
   padding-bottom: 10px;
   padding-top: 10px;
-  margin-top: 30px;
+  margin-top: 30px; //TODO: adjust for form modifications
   margin-left: 1em;
   font-family: $fontStack;
   text-decoration: none;
   font-size: 1.1em;
   box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
   width: 90%;
+}
+
+.loader {
+  display:grid;
+  justify-content: center;
+  align-items:center;
+  height:4em;
+  background: $formPageBGColors;
+  background: $formPageBGGradient;
 }
 
 .error {
@@ -43,7 +52,7 @@
 }
 
 .signup {
-  padding-top: 35px;
+  padding-top: 35px; //TODO: adjust for form modifications
   font-size: 1em;
   font-family: $fontStack;
   padding-left: .5em;
