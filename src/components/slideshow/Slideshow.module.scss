@@ -1,142 +1,138 @@
-@import '../../scss/variables';
-@import "~bootstrap/scss/bootstrap";  
-@import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css');
+@import "../../scss/variables";
+@import "~bootstrap/scss/bootstrap";
+@import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css");
 
 .carousel {
-    z-index: 0;
+  z-index: 0;
 }
 
 .react-icons {
-    font-size: 10em;
-  }
-
-
-
-//@media (max-width: 5px) {
-  // .carousel-indicators {
-  //   bottom: auto;
-  //   top: 105%;
-  // }
-//   .carousel-indicators li {
-//    // border-color: #666;  
-//     //padding-left: 40px;
-//   }
-//   .carousel-indicators .active {
-//     background-color: #666;
-//   }
-
-// .carousel-control-next-icon {
-// font-size: 15em; 
-// }
-// .carousel-control-prev-icon{
-// //  background-image : url(//url of icon);
-// font-size: 50em; 
-// }
-
-// .nextIcon{
-//     color:black;
+  font-size: 10em;
+}
 
 .margin {
-    line-height: 76px;
-    height: 70px;
-    //border: 3px solid green;
-    text-align: center;
-    padding-left: 0;
-    padding-right: 17px;
-    color: black;
+  line-height: 76px;
+  height: 70px;
+  text-align: center;
+  padding-left: 0;
+  padding-right: 17px;
+  color: black;
 }
 
 .my__carousel_main {
-    div{ 
-        ol{
-          margin: auto;
-         
-            li{ 
-                 background-color:rgba(128, 128, 128, 0.5);
-                border-radius: 60%;
-                // height: 25px;
-                // width: 25px;
-                margin-bottom: 5mm;//padding-left: 50mm;
-            }
-        
-            //   & ::after {
-            //   border-radius: 50%;
-            //     height: 30px;
-            //     width: 20px;
-            // }
-        }
+  div {
+    ol {
+      margin: auto;
+      :active {
+        background-color: gray;
+        height: 20px;
+        width: 20px;
+      }
+      li {
+        margin-left: 5px;
+        margin-right: 5px;
+        background-color: rgba(128, 128, 128, 0.5);
+        border-radius: 60%;
+        margin-bottom: 5mm;
+        //  height: 20px;
+        //  width: 20px;
+      }
     }
+  }
 }
 
-// .carousel-indicators .active{
-//   background-color: #f00;
-// }
+// below are attempted ways to isolate the active indicator.
 
-// .my__carousel_main  {
-//   div{ 
-//       ol{
-//         margin: auto;//padding-left: 50mm;
-//           li : { 
-//               //background-color:gray;
-//               border-radius: 60%;
-//               height: 30px;
-//               width: 30px;
-            
-//           }
-//       }
-//   }
-// }
-
-
-// .my__carousel_main  {
-//   div{ 
-//       ol{
-//         margin: auto;//padding-left: 50mm;
-//           li:active{ 
-//               //background-color:gray;
-//               border-radius: 50%;
-//               height: 20px;
-//               width: 20px;
-              
-            
-//           }
-//       }
-//   }
-// }
-
-// .carousel-indicators li {
-//     background-color: #999;
-//     background-color: rgba(70, 70, 70, 0.25);
-//     width: 10px;
-//  height: 10px;
-//   border-radius: 100%;
-//   }
-  
-//   .carousel-indicators .active {
-//     background-color: #444;
-//   }
-
-/* Add an extra .carousel parent class to increase specificity
-//    avoiding the use of !important flag. */
-//    .carousel .carousel-indicators li {
-//     background-color: #fff;
-//     background-color: rgba(70, 70, 70, 0.25);
-//   }
-  
-//   .carousel .carousel-indicators .active {
-//     background-color: #444;
-//   }
-
-//   #slider {
-//     height: 350px;
-//     //overflow: hidden;
-//     width: 100%;
-// }
-// .carousel-indicators li {
-//     width: 10px;
-//     height: 10px;
-//     border-radius: 100%;
-// }
 // .carousel-indicators {
-//     bottom: -50px;
+//   position: absolute;
+//   right: 0;
+//   bottom: 10px;
+//   left: 0;
+//   z-index: 15;
+//   display: flex;
+//   justify-content: center;
+//   padding-left: 0; // override <ol> default
+//   // Use the .carousel-control's width as margin so we don't overlay those
+//   margin-right: auto;
+//   margin-left: auto;
+//   list-style: none;
+
+//   li {
+//     position: relative;
+//     flex: 0 1 auto;
+//     width: auto;
+//     height: auto;
+//     margin-right: auto;
+//     margin-left: auto;
+//     text-indent: -999px;
+//     cursor: pointer;
+//     background-color: rgba(white, .5);
+
+//     // Use pseudo classes to increase the hit area by 10px on top and bottom.
+//     &::before {
+//       position: absolute;
+//       top: -10px;
+//       left: 0;
+//       display: inline-block;
+//       width: 100%;
+//       height: 10px;
+//       content: "";
+//     }
+//     &::after {
+//       position: absolute;
+//       bottom: -10px;
+//       left: 0;
+//       display: inline-block;
+//       width: 100%;
+//       height: 10px;
+//       content: "";
+//     }
+//   }
+
+//   .active {
+//     background-color: gray;
+//   }
+// }
+
+// .active, .btn:hover {
+//   background-color: #666;
+//   color: white;
+//   height: 20px;
+//   width: 20px;
+// }
+
+// &:active {
+//   border-radius: 60%;
+//     height: 20px;
+//     width: 20px;
+
+// .my__carousel_main.active {
+//   div {
+//     ol {
+//       margin: auto;
+//       li {
+//         background-color: rgba(128, 128, 128, 0.5);
+//         border-radius: 60%;
+//         margin-bottom: 5mm;
+//         height: 20px;
+//         width: 20px;
+//       }
+
+//     }
+//   }
+
+// .my__carousel_main  {
+//   div {
+//     ol {
+//       margin: auto;
+//       li :active {
+//         background-color: rgba(128, 128, 128, 0.5);
+//         border-radius: 60%;
+//         margin-bottom: 5mm;
+//         height: 20px;
+//         width: 20px;
+//       }
+
+//     }
+//   }
 // }
