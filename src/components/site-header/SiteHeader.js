@@ -24,7 +24,7 @@ const SiteHeader = ({
         <div className={styles.email}>
           {email}
           <Link to="/" onClick={handleLogout}>
-            LOGOUT
+            SIGNOUT
           </Link>
         </div>
       ) : (
