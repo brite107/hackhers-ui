@@ -42,13 +42,14 @@ const DemoDisplay = () => {
 
   return (
     <div>
-      {appState.loading && <PageLoadingSpinner />}
+     
       <div>
         { error ? <ErrorMessage /> : (
           <Row>
             <h2 className={styles.breadcrumb}>{`${demographic}`}</h2>
           </Row>
         )}
+        {appState.loading && <PageLoadingSpinner />}
       </div>
       <Row className="fluid">
         {appState.products && appState.products.map((product) => (

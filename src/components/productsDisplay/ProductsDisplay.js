@@ -42,14 +42,14 @@ const ProductsDisplay = () => {
   }, [demographic, group, value]);
 
   return (
-    <div>
-      {appState.loading && <PageLoadingSpinner />}
+    <div className={styles.body}>
       <div>
         { error ? <ErrorMessage /> : (
           <Row>
-            <h2 className={styles.breadcrumb}>{`${demographic} | ${value}`}</h2>
+            <h2 className={styles.breadcrumb}>{`${demographic} | ${value.replace('+', ' ')}`}</h2>
           </Row>
         )}
+        {appState.loading && <PageLoadingSpinner />}
       </div>
       <Row className="fluid">
         {appState.products && appState.products.map((product) => (
