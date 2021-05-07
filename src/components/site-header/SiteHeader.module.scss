@@ -1,20 +1,22 @@
 @import '../../scss/variables';
 .container {
   width: 100%;
-  height: fit-content;
+  height:3em;
   background: $headerBGColor;
   position: fixed;
   top: 0;
   z-index: 1;
 }
 .signIn {
+  display: flexbox;
+  margin-top: .40em;
   text-align: right;
   padding-right: 1em;
   :link {
     font-family: $fontStack;
     text-decoration: none;
-    font-size: 1.20em;
-    padding-left: 1.2em;
+    font-size: 1em;
+    margin-left: 2em;
   }
   :visited {
     text-decoration: none;
@@ -24,10 +26,11 @@
 .nav {
   display: flex;
   background: white;
+  margin-top: .5em;
 }
 .email {
+  display: flexbox;
   color: rgb(223, 215, 215);
-  justify-content: space-between 30px;
   font-family: $fontStack;
   text-decoration: none;
   align-items: center;

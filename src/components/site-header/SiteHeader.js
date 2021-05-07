@@ -21,8 +21,8 @@ const SiteHeader = ({
   <div className={styles.container}>
     <div className={styles.signIn}>
       {isLoggedIn ? (
-        <div className={styles.email}>
-          {email}
+          <div className={styles.email}>
+            {email}
           <Link to="/" onClick={handleLogout}>
             SIGNOUT
           </Link>

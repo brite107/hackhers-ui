@@ -13,6 +13,7 @@ $border-radius:0px;
 $font-color:white;
 $formPageBGColors:rgb(53,233,254);
 $formPageBGGradient: linear-gradient(90deg, rgba(53,233,254,0.5382528011204482) 0%, rgba(251,180,236,0.6250875350140056) 100%);
+$mobileFriendly: 950px;
 
 @use 'forms';
 @use 'buttons';
