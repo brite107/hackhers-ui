@@ -4,7 +4,6 @@ import { RiShoppingBagLine } from 'react-icons/ri';
 import { Col, Row } from 'react-bootstrap';
 import Logo from '../logo/Logo';
 import styles from './SiteHeader.module.scss';
-import BurgerMenu from '../burgerMenu/BurgerMenu';
 /**
  * @name SiteHeader
  * @description The SiteHeader is a functional component that
@@ -43,17 +42,16 @@ const SiteHeader = ({
             <Logo />
           </Link>
         </Col>
-          <Col lg="8" className="my-auto">
-            <div className={styles.navLinks}>
-              {dropdown}
-            </div>
-          </Col>
+        <Col lg="8" className="my-auto">
+          <div className={styles.navLinks}>
+            {dropdown}
+          </div>
+        </Col>
         <Col lg="2">
           <div className={styles.icon}>
             <Link to="/shoppingCart">
               <RiShoppingBagLine />
             </Link>
-            <BurgerMenu />
           </div>
         </Col>
       </Row>
