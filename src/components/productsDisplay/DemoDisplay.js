@@ -24,6 +24,7 @@ const DemoDisplay = () => {
    * @returns products data
    */
   useEffect(() => {
+    window.scrollTo(0, 0);
     setAppState({ loading: true });
     axios
       .get(`${PRODUCTS_ENDPOINT}?demographic=${demographic}`)
@@ -42,7 +43,7 @@ const DemoDisplay = () => {
 
   return (
     <div>
-     
+
       <div>
         { error ? <ErrorMessage /> : (
           <Row>
