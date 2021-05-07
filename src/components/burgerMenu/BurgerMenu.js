@@ -1,17 +1,20 @@
-import React from 'react';
-import {FaBars} from 'react-icons/fa';
+import React, { useState } from 'react';
 import SideDrawer from '../sideDrawer/SideDrawer';
+import { BurgerMenuWrapper, BurgerLine } from './style';
 
 const BurgerMenu = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
         <div>
-            <FaBars open={isOpen} onClick={() => setIsOpen(!isOpen)}>
-                <SideDrawer />
-            </FaBars>
+            <BurgerMenuWrapper open={isOpen} onClick={() => setIsOpen(!isOpen)}>
+                <BurgerLine open={isOpen}></BurgerLine>
+                <BurgerLine open={isOpen}></BurgerLine>
+                <BurgerLine open={isOpen}></BurgerLine>
+            </BurgerMenuWrapper>
+            <SideDrawer />
         </div>
     )
 }
 
-export default BurgerMenu
+export default BurgerMenu;

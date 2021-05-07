@@ -9,9 +9,9 @@
 }
 .signIn {
   display: flexbox;
-  margin-top: .40em;
+  margin-top: .35em;
   text-align: right;
-  padding-right: 1em;
+  padding-right: 1.5em;
   :link {
     font-family: $fontStack;
     text-decoration: none;
@@ -26,7 +26,7 @@
 .nav {
   display: flex;
   background: white;
-  margin-top: .5em;
+  margin-top: .25em;
 }
 .email {
   display: flexbox;
@@ -40,6 +40,7 @@
   background: white;
   color: $navlinksFontColor;
   padding-right: 1em;
+  margin-top: .15em;
   font-size: 2em;
   :visited {
     text-decoration: none;
