@@ -16,15 +16,15 @@ const Slideshow = () => {
   const history = useHistory();
 
   const toKids = () => {
-    history.push('/products/kids/shinguard');
+    history.push('/products/Kids/type/Shin+Guard');
   };
 
   const toWomens = () => {
-    history.push('/products/women/pant');
+    history.push('/products/Women/type/Pant');
   };
 
   const toSunglasses = () => {
-    history.push('/products/men/sunglasses');
+    history.push('/products/Women/type/Sunglasses');
   };
 
   return (
