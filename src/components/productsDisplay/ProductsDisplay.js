@@ -25,6 +25,7 @@ const ProductsDisplay = () => {
    */
   useEffect(() => {
     setAppState({ loading: true });
+    window.scrollTo(0, 0);
     const path = buildPath(demographic, group, value);
     axios
       .get(path)

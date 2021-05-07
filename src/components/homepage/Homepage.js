@@ -1,17 +1,25 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Slideshow from '../slideshow/Slideshow';
+import NewProducts from '../newProducts/NewProducts';
 
 /**
  * @name Homepage
  * @description Displays homepage content
  * @returns homepage content
  */
-const Homepage = () => (
-  <div>
-    <Slideshow />
-    <h1>Welcome to the Homepage</h1>
-    <h2>Cool Heat content coming soon</h2>
-  </div>
-);
+const Homepage = () => {
+  /**
+   * Scrolls to top of page
+   */
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  return (
+    <div>
+      <Slideshow />
+      <NewProducts />
+    </div>
+  );
+};
 
 export default Homepage;
