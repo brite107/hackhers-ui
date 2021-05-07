@@ -34,19 +34,40 @@
   font-family: $fontStack;
   color: black;
 }
-.cents{
-  font-size: .6em;
+.cents {
+  font-size: 0.6em;
 }
 .image {
   height: auto;
 }
 @import "~bootstrap/scss/bootstrap";
 
-.modal{
+.modal {
   align-items: center;
   margin-bottom: 200px;
 }
 
-.details{
+.details {
   height: 500px;
+}
+
+.buttonDetails {
+  cursor: pointer;
+  align-items: center;
+  justify-items: center;
+  border-radius: 0px;
+  color: #fff;
+  background: $button;
+  border: 0;
+  padding-bottom: 7px;
+  padding-top: 7px;
+  margin-top: 10px;
+  font-family: $fontStack;
+  text-decoration: none;
+  font-size: 1.1em;
+  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+  width: 100%;
+  &:hover {
+    opacity: 0.75;
+  }
 }
