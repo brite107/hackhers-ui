@@ -5,6 +5,8 @@ import Form from '../form/Form';
 import Input from '../formComponents/Input';
 import styles from './Login.module.scss';
 import FormLoadingSpinner from '../spinner/FormLoadingSpinner';
+import { makeRequest, saveObjToSessionStorage } from '../../utils/Helper';
+import { API_URL, LOGIN_EP, CUSTOMER_EP } from '../../utils/constants';
 
 /**
  * @name Login
@@ -21,6 +23,19 @@ const Login = (props) => {
 
   const history = useHistory();
 
+  const addCustomerToSessionStorage = async (customerEmail, token) => {
+    // make call to backend to get customer information
+    const response = await makeRequest('get', `${API_URL}${CUSTOMER_EP}?email=${customerEmail}`, {}, {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${token}`
+    });
+    const customer = response.data[0];
+    // remove the password from the object
+    delete customer.password;
+    // save the object to session storage
+    saveObjToSessionStorage('customer', customer);
+  };
+
   /**
    * This function makes a POST call to the hackhers api at the /login endpoint to
    *  validate the login credintials and role of the customer.
@@ -29,29 +44,25 @@ const Login = (props) => {
   const getLoggedIn = async () => {
     setIsLoaded(false);
     try {
-      await axios({
-        method: 'POST',
-        url: 'http://localhost:8080/login',
-        data: {
-          email,
-          password
-        }
-      }).then((response) => {
-        const { token } = response.data;
-        sessionStorage.setItem('token', token);
-        sessionStorage.setItem('userEmail', email);
-        props.setEmail(email);
-        setTimeout(() => {
-          setIsLoaded({ isLoaded: false });
-        }, 3000); // TODO: Set to 1.5 seconds for demo
-        if (response.status === 200) {
-          setIsLoaded(true);
-          sessionStorage.setItem('loggedIn', true);
-          props.setLoggedIn(true);
-          setError('');
-          history.push('/');
-        }
+      const response = await makeRequest('post', API_URL + LOGIN_EP, {
+        email,
+        password
       });
+      const { token } = response.data;
+      sessionStorage.setItem('token', token);
+      sessionStorage.setItem('userEmail', email);
+      props.setEmail(email);
+      setTimeout(() => {
+        setIsLoaded({ isLoaded: false });
+      }, 3000); // TODO: Set to 1.5 seconds for demo
+      if (response.status === 200) {
+        setIsLoaded(true);
+        await addCustomerToSessionStorage(email, token);
+        sessionStorage.setItem('loggedIn', true);
+        props.setLoggedIn(true);
+        setError('');
+        history.push('/');
+      }
     } catch (err) {
       setIsLoaded(true);
       setError('Invalid username or password');

@@ -16,10 +16,14 @@ import Dropdown from '../dropdown/Dropdown';
 import ProductsDisplay from '../productsDisplay/ProductsDisplay';
 import DemoDisplay from '../productsDisplay/DemoDisplay';
 import ShoppingCart from '../shoppingCart/ShoppingCart';
+import EditProfile from '../editProfile/EditProfile';
+import ErrorMessage from '../productsDisplay/ErrorMessage';
 
 const App = () => {
   const [loggedIn, setLoggedIn] = useState(false);
   const [email, setEmail] = useState('');
+  const [error, setError] = useState(false);
+
   /**
    * This function sets the state of loggedIn,
    * email depedning on if the user is logged (token) when the page loads.
@@ -51,6 +55,7 @@ const App = () => {
           handleLogout={handleLogout}
           dropdown={<Dropdown />}
         />
+        {error && <ErrorMessage />}
         <Switch>
           <Route
             exact
@@ -69,7 +74,8 @@ const App = () => {
               />
             )}
           />
-          <Route path="/signup" exact render={() => <Signup email={email} setEmail={setEmail} setLoggedIn={setLoggedIn} />} />
+          <Route path="/signup" exact render={() => <Signup setEmail={setEmail} setLoggedIn={setLoggedIn} />} />
+          <Route path="/customers/edit/:id" exact render={() => <EditProfile setEmail={setEmail} setError={setError} />} />
           <Route path="/products/:demographic/:group/:value" component={ProductsDisplay} />
           <Route path="/products/:demographic" component={DemoDisplay} />
           <Route path="/shoppingCart" component={ShoppingCart} exact />
