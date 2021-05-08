@@ -4,6 +4,7 @@ import { RiShoppingBagLine } from 'react-icons/ri';
 import { Col, Row } from 'react-bootstrap';
 import Logo from '../logo/Logo';
 import styles from './SiteHeader.module.scss';
+import { getCustomer } from '../../utils/common';
 /**
  * @name SiteHeader
  * @description The SiteHeader is a functional component that
@@ -16,13 +17,13 @@ import styles from './SiteHeader.module.scss';
  * @returns a header that contains navigation links.
  */
 const SiteHeader = ({
-  email, isLoggedIn, handleLogout, dropdown
+  isLoggedIn, handleLogout, dropdown
 }) => (
   <div className={styles.container}>
     <div className={styles.signIn}>
       {isLoggedIn ? (
         <div className={styles.email}>
-          {email}
+          {getCustomer().email}
           <Link to="/" onClick={handleLogout}>
             LOGOUT
           </Link>

@@ -2,7 +2,7 @@
 import axios from 'axios';
 import { PRODUCTS_ENDPOINT } from './constants';
 
-export const makeRequest = (method, url, data, headers = { 'Content-Type': 'application/json' }) => axios({
+export const makeRequest = (method, url, data, headers) => axios({
   method,
   url,
   data,
@@ -14,4 +14,8 @@ export const buildPath = (demographic, group, value) => {
     return `${PRODUCTS_ENDPOINT}?demographic=${demographic}`;
   }
   return `${PRODUCTS_ENDPOINT}?demographic=${demographic}&${group}=${value}`;
+};
+
+export const saveObjToSessionStorage = (key, object) => {
+  sessionStorage.setItem(key, JSON.stringify(object));
 };
