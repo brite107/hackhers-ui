@@ -8,20 +8,22 @@ import { IconContext } from 'react-icons/lib';
 import { SidebarData } from './SidebarData'
 
 const Nav = styled.div`
-  height: 80px;
   display: flexbox;
   justify-content: right;
   align-items: center;
 `;
 
 const NavIcon = styled(Link)`
-  color: #000000;
-  margin-left: 2rem;
   font-size: 2rem;
-  height: 80px;
-  display: flexbox;
+  display: flex;
   justify-content: right;
-  align-items: center;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-top: .25em;
+
+  @media screen and (min-width: 961px) {
+      display: none;
+  }
 `;
 
 const SidebarNav = styled.nav`
@@ -31,7 +33,7 @@ const SidebarNav = styled.nav`
   display: flex;
   justify-content: center;
   position: fixed;
-  top: 0;
+  top: 3em;
   right: ${({ sidebar }) => (sidebar ? '0' : '-100%')};
   transition: 350ms;
   z-index: 10;
@@ -48,7 +50,7 @@ function BurgerMenu() {
 
     return (
         <>
-            <IconContext.Provider value={{ color: '#fff' }}>
+            <IconContext.Provider value={{ color: '#000000' }}>
                 <Nav>
                     <NavIcon to='#'>
                         <FaIcons.FaBars onClick={showSidebar} />

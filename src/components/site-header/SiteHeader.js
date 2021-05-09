@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { RiShoppingBagLine } from 'react-icons/ri';
-import { Col, Row } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
 import Logo from '../logo/Logo';
 import styles from './SiteHeader.module.scss';
 import BurgerMenu from '../burgerMenu/BurgerMenu';
@@ -37,27 +37,28 @@ const SiteHeader = ({
       )}
     </div>
     <nav className={styles.nav}>
-      <Row className="my-auto">
-        <Col lg="2">
-          <Link to="/">
-            <Logo />
-          </Link>
-        </Col>
-        <Col lg="8" className="my-auto">
-          <div className={styles.navLinks}>
-            <BurgerMenu>
-            {dropdown}
-            </BurgerMenu>
-          </div>
-        </Col>
-        <Col lg="2">
-          <div className={styles.icon}>
-            <Link to="/shoppingCart">
-              <RiShoppingBagLine />
+      <Container fluid>
+        <Row sm="6" md="4" className="my-auto">
+          <Col lg="2">
+            <Link to="/">
+              <Logo />
             </Link>
-          </div> 
-        </Col>
-      </Row>
+          </Col>
+          <Col lg={8} className="my-auto">
+            <div>
+              {dropdown}
+            </div>
+          </Col>
+          <Col lg="2">
+            <div className={styles.icon}>
+              <Link to="/shoppingCart">
+                <RiShoppingBagLine />
+              </Link>
+              <BurgerMenu />
+            </div>
+          </Col>
+        </Row>
+      </Container>
     </nav>
 
   </div>

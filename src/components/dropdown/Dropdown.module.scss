@@ -1,35 +1,37 @@
-@import '../../scss/variables';
-.drop {
-  font-family: sans-serif;
+@import "../../scss/variables";
+@media screen and (max-width: 960px) {
+  .drop {
+    font-family: sans-serif;
+    display: none;
+  }
 }
 .container {
   width: 100%;
   margin-left: 25em;
   margin-right: 55em;
   display: flex;
-  
+
   :link {
     color: $navlinksFontColor;
     font-family: $fontStack;
-    
+
     text-decoration: none;
     font-weight: bold;
-    padding: .25em;
+    padding: 0.25em;
   }
   :visited {
     text-decoration: none;
     color: $navlinksFontColor;
   }
-  :hover{
+  :hover {
     color: blue;
-}
+  }
 }
 /*includes the main links*/
-.mainLinks{
+.mainLinks {
   font-size: 1.4em;
 }
 .menuitem {
-  
   width: 10em;
 }
 .submenu {
@@ -37,44 +39,41 @@
   top: 3.1em;
   padding-top: 2em;
   padding-left: 3em;
-  background-color:white;
+  background-color: white;
   border-radius: 1px 1px 10px 10px;
   width: 32em;
   height: 48em;
-
 }
 .submenucontainer1 {
-  
   :link {
     // font-size: 1em;
     font-weight: 300;
-}
+  }
 }
 .submenucontainer2 {
-  
-      :link {
-        margin-left: 1em;
-        font-weight: 300;
-    }
+  :link {
+    margin-left: 1em;
+    font-weight: 300;
+  }
 }
 .cat {
-    color: $navlinksFontColor;
-    font-family: $fontStack;
-    font-weight: bold;
-    text-align:start;
-    margin-left: 1.1em;
-    font-size: 1.4em;
-    padding-left: 1em;
-  }
-  .type {
-    color: $navlinksFontColor;
-    font-family: $fontStack;
-    font-weight: bold;
-    text-align:start;
-    // margin-left: .75em;
-    font-size: 1.4em;
-    padding-left: .9em;
-  }
+  color: $navlinksFontColor;
+  font-family: $fontStack;
+  font-weight: bold;
+  text-align: start;
+  margin-left: 1.1em;
+  font-size: 1.4em;
+  padding-left: 1em;
+}
+.type {
+  color: $navlinksFontColor;
+  font-family: $fontStack;
+  font-weight: bold;
+  text-align: start;
+  // margin-left: .75em;
+  font-size: 1.4em;
+  padding-left: 0.9em;
+}
 .submenuitem {
   font-size: 1.1em;
   display: flex;
@@ -84,5 +83,4 @@
     text-decoration: none;
     color: $navlinksFontColor;
   }
-
 }

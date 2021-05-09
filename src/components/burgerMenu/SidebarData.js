@@ -4,13 +4,14 @@ import * as RiIcons from 'react-icons/ri'
 export const SidebarData = [
     {
         title: 'MENS',
-        path: '/Men',
+        path: '/products/Men',
         iconClosed: <RiIcons.RiArrowDownSFill />,
         iconOpened: <RiIcons.RiArrowUpSFill />,
 
         subNav: [
             {
                 title: 'Categories',
+                path: '/products/Men',
                 iconClosed: <RiIcons.RiArrowDownSFill />,
                 iconOpened: <RiIcons.RiArrowUpSFill />,
 
@@ -59,7 +60,7 @@ export const SidebarData = [
             },
             {
                 title: 'Types',
-                path: '/Men/type',
+                path: '/products/Men',
                 iconClosed: <RiIcons.RiArrowDownSFill />,
                 iconOpened: <RiIcons.RiArrowUpSFill />,
 
@@ -142,13 +143,14 @@ export const SidebarData = [
     },
     {
         title: 'WOMENS',
-        path: '/Women',
+        path: '/products/Women',
         iconClosed: <RiIcons.RiArrowDownSFill />,
         iconOpened: <RiIcons.RiArrowUpSFill />,
 
         subNav: [
             {
                 title: 'Categories',
+                path: '/products/Women',
                 iconClosed: <RiIcons.RiArrowDownSFill />,
                 iconOpened: <RiIcons.RiArrowUpSFill />,
 
@@ -197,6 +199,7 @@ export const SidebarData = [
             },
             {
                 title: 'Types',
+                path: '/products/Women',
                 iconClosed: <RiIcons.RiArrowDownSFill />,
                 iconOpened: <RiIcons.RiArrowUpSFill />,
 
@@ -286,6 +289,7 @@ export const SidebarData = [
         subNav: [
             {
                 title: 'Categories',
+                path: '/products/Kids',
                 iconClosed: <RiIcons.RiArrowDownSFill />,
                 iconOpened: <RiIcons.RiArrowUpSFill />,
 
@@ -334,6 +338,7 @@ export const SidebarData = [
             },
             {
                 title: 'Types',
+                path: '/products/Kids',
                 iconClosed: <RiIcons.RiArrowDownSFill />,
                 iconOpened: <RiIcons.RiArrowUpSFill />,
 
