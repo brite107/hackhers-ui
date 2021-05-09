@@ -7,13 +7,18 @@ export const STATE_ABBREVIATIONS = [
   'VT', 'VA', 'WA', 'WV', 'WI', 'WY'
 ];
 
-export const CUSTOMER_ENDPOINT = 'http://localhost:8080/customers';
+// export const CUSTOMER_ENDPOINT = 'http://localhost:8080/customers';
+export const CUSTOMER_ENDPOINT = 'https://hackhers-api.herokuapp.com/customers';
 
-export const LOGIN_ENDPOINT = 'http://localhost:8080/login';
+// export const LOGIN_ENDPOINT = 'http://localhost:8080/login';
+export const LOGIN_ENDPOINT = 'https://hackhers-api.herokuapp.com/login';
 
-export const PRODUCTS_ENDPOINT = 'http://localhost:8080/products';
+// export const PRODUCTS_ENDPOINT = 'http://localhost:8080/products';
+export const PRODUCTS_ENDPOINT = 'https://hackhers-api.herokuapp.com/products';
 
-export const API_URL = 'http://localhost:8080';
+
+// export const API_URL = 'http://localhost:8080';
+export const API_URL = 'https://hackhers-api.herokuapp.com';
 
 export const LOGIN_EP = '/login';
 
