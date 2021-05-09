@@ -2,9 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { RiShoppingBagLine } from 'react-icons/ri';
 import { Col, Row } from 'react-bootstrap';
+import { BsGearFill } from 'react-icons/bs';
 import Logo from '../logo/Logo';
 import styles from './SiteHeader.module.scss';
 import { getCustomer } from '../../utils/common';
+
 /**
  * @name SiteHeader
  * @description The SiteHeader is a functional component that
@@ -22,12 +24,20 @@ const SiteHeader = ({
   <div className={styles.container}>
     <div className={styles.signIn}>
       {isLoggedIn ? (
-        <div className={styles.email}>
-          {getCustomer().email}
-          <Link to="/" onClick={handleLogout}>
-            LOGOUT
-          </Link>
-        </div>
+        <>
+          <div className={styles.email}>
+            <Link to={`/customers/edit/${getCustomer().id}`} className="mx-3">
+              {getCustomer().email}
+            </Link>
+            <Link to={`/customers/edit/${getCustomer().id}`}>
+              <BsGearFill />
+            </Link>
+            <span className="mx-4">|</span>
+            <Link to="/" onClick={handleLogout}>
+              LOGOUT
+            </Link>
+          </div>
+        </>
       ) : (
         <div>
           <Link to="/login"> SIGN IN </Link>

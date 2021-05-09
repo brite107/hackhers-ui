@@ -13,7 +13,6 @@ import styles from '../signup/Signup.module.scss';
 import FormLoadingSpinner from '../spinner/FormLoadingSpinner';
 import { getCustomer, getToken } from '../../utils/common';
 import { makeRequest } from '../../utils/Helper';
-import { Error } from '../productsDisplay/ErrorMessage';
 
 const EditProfile = ({ setEmail }) => {
   const {
