@@ -1,3 +1,44 @@
+@import "../../scss/variables";
+@import "~bootstrap/scss/bootstrap";
+//@import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css");
+
 .carousel {
-    z-index: 0;
+  z-index: 0;
 }
+
+.react-icons {
+  font-size: 10em;
+}
+
+.margin {
+  z-index: 0;
+  line-height: 87px;
+  height: 70px;
+  text-align: center;
+  padding-left: 1px;
+  padding-right: 17px;
+  color: black;
+  font-size: 13px;
+}
+
+.my__carousel_main {
+  div {
+    ol {
+      list-style-type: initial;
+      margin: auto;
+      justify-content: center;
+      li {
+        cursor: pointer;
+        font-size: 50px;
+        margin-left: 15px;
+        margin-right: 15px;
+        border-radius: 60%;
+        margin-bottom: 3mm;
+        color:rgba(170, 163, 163, 0.63);
+        &:active {
+            opacity: 0.75;
+          }
+        }
+      }
+    }
+  }
