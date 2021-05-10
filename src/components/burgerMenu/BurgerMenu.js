@@ -33,10 +33,14 @@ const SidebarNav = styled.nav`
   display: flex;
   justify-content: center;
   position: fixed;
-  top: 2.85em;
+  top: 2.80em;
   right: ${({ sidebar }) => (sidebar ? '0' : '-100%')};
   transition: 350ms;
   z-index: 10;
+
+  @media screen and (max-width: 960px) {
+      top: 2.75em;
+  }
 `;
 
 const SidebarWrap = styled.div`

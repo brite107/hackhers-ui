@@ -38,25 +38,25 @@ const SiteHeader = ({
     </div>
     <nav className={styles.nav}>
       <Container fluid>
-        <Row>
-          <Col sm={6} md={2} lg={2}>
+        <Row className="my-auto">
+          <Col xs={1} sm={1} md={2} lg={2} className="my-auto">
             <Link to="/">
               <Logo />
             </Link>
           </Col>
-          <Col sm={6} md={7} lg={8} className="my-auto">
+          <Col xs={8} sm={7} md={8} lg={8} className="my-auto">
             <div>
               {dropdown}
             </div>
           </Col>
-          <Col sm={6} md={true} lg={2}>
+          <Col xs={1} sm={1} md={1} lg={2} className="my-auto">
             <div className={styles.icon}>
               <Link to="/shoppingCart">
                 <RiShoppingBagLine />
               </Link>
             </div>
           </Col>
-          <Col sm={6} md={true} lg={2}>
+          <Col xs={1} sm={1} md={1} lg={2} className="my-auto">
             <div className={styles.menu}>
               <BurgerMenu />
             </div>
