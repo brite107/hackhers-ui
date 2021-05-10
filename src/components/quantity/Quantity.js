@@ -6,8 +6,13 @@ import {
 import styles from './Quantity.module.scss';
 
 const Quantity = () => {
-  // HINT: each "item" in our list names a name,
-  // a boolean to tell if its been completed, and a quantity
+  /**
+ * @name Quantity
+ * @description This component controls the quanity tracker on the modal
+ * HINT: each "item" in our list names a name,
+ * a boolean to tell if its been completed, and a quantity
+ * @returns Quantity tracker.
+ */
   const [items, setItems] = useState([
     { itemName: 'item 1', quantity: 1, isSelected: false }
   ]);
