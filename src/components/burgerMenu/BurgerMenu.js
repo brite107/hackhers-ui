@@ -27,13 +27,13 @@ const NavIcon = styled(Link)`
 `;
 
 const SidebarNav = styled.nav`
-  background: #15171c;
-  width: 250px;
+  background: #fff;
+  width: 100%;
   height: 100vh;
   display: flex;
   justify-content: center;
   position: fixed;
-  top: 3em;
+  top: 2.85em;
   right: ${({ sidebar }) => (sidebar ? '0' : '-100%')};
   transition: 350ms;
   z-index: 10;
@@ -53,14 +53,14 @@ function BurgerMenu() {
             <IconContext.Provider value={{ color: '#000000' }}>
                 <Nav>
                     <NavIcon to='#'>
-                        <FaIcons.FaBars onClick={showSidebar} />
+                        {!sidebar ?
+                            <FaIcons.FaBars onClick={showSidebar} /> :
+                            <AiIcons.AiOutlineClose onClick={showSidebar} />
+                        }
                     </NavIcon>
                 </Nav>
                 <SidebarNav sidebar={sidebar}>
                     <SidebarWrap>
-                        <NavIcon to='#'>
-                            <AiIcons.AiOutlineClose onClick={showSidebar} />
-                        </NavIcon>
                         {SidebarData.map((item, index) => {
                             return <AccordionMenu item={item} key={index} />;
                         })}

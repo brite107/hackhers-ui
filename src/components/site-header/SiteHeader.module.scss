@@ -23,7 +23,6 @@
   }
 }
 .nav {
-  display: flex;
   background: white;
   margin-top: 0.25em;
 }
@@ -36,9 +35,8 @@
 }
 .icon {
   text-align: right;
-  background: white;
   color: $navlinksFontColor;
-  padding-right: 1em;
+  // padding-right: .70em;
   margin-top: 0.15em;
   font-size: 2em;
   :visited {
@@ -46,19 +44,14 @@
     color: $navlinksFontColor;
   }
 }
-@media screen and (min-width: 960px) {
-  .my-auto{
-    display: none;
-  }
-  .icon {
-    display: flex;
-    background: white;
+.menu {
+  text-align: right;
+  color: $navlinksFontColor;
+  // padding-right: .70em;
+  margin-top: 0.25em;
+  font-size: 2em;
+  :visited {
+    text-decoration: none;
     color: $navlinksFontColor;
-    font-size: 2rem;
-    justify-content: flex-end;
-    :visited {
-      text-decoration: none;
-      color: $navlinksFontColor;
-    }
   }
 }
