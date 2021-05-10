@@ -25,6 +25,7 @@
 .nav {
   background: white;
   margin-top: 0.25em;
+  justify-content: space-between;
 }
 .email {
   display: flexbox;
@@ -37,6 +38,7 @@
   text-align: right;
   color: $navlinksFontColor;
   padding-right: .70em;
+  padding-bottom: .25em;
   font-size: 2em;
   :visited {
     text-decoration: none;
@@ -47,6 +49,7 @@
   text-align: right;
   color: $navlinksFontColor;
   padding-right: .70em;
+  padding-bottom: .25em;
   font-size: 2em;
   :visited {
     text-decoration: none;

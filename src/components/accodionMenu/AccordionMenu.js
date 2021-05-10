@@ -6,6 +6,7 @@ const SidebarLink = styled(Link)`
   display: flex;
   color: #000000;
   justify-content: space-between;
+  border-bottom: .25px solid black;
   align-items: center;
   padding: 20px;
   list-style: none;
@@ -27,13 +28,14 @@ const DropdownLink = styled(Link)`
   background: #fff;
   height: 60px;
   padding-left: 3rem;
+  border-bottom: .25px solid black;
   display: flex;
   align-items: center;
   text-decoration: none;
   color: #000000;
   font-size: 18px;
   &:hover {
-    background: #632ce4;
+    border-left: 4px solid #632ce4;
     cursor: pointer;
   }
 `;
@@ -47,7 +49,6 @@ const AccordionMenu = ({ item }) => {
     <>
       <SidebarLink to={item.path} onClick={item.subNav && showSubnav}>
         <div>
-          {item.icon}
           <SidebarLabel>{item.title}</SidebarLabel>
         </div>
         <div>
@@ -61,10 +62,12 @@ const AccordionMenu = ({ item }) => {
       {subnav &&
         item.subNav.map((item, index) => {
           return (
-            <DropdownLink to={item.path} key={index} onClick={item.subNav && showSubnav}>
-              <SidebarLabel>{item.title}</SidebarLabel>
+            <DropdownLink key={index}>
               <div>
-                {item.subNav && subnav
+              <SidebarLabel>{item.title}</SidebarLabel>
+              </div>
+              <div>
+                {item.subNav && !subnav
                   ? item.iconOpened
                   : item.subNav
                     ? item.iconClosed

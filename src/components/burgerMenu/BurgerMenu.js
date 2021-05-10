@@ -21,7 +21,7 @@ const NavIcon = styled(Link)`
   margin-right: 2rem;
   margin-top: .25em;
 
-  @media screen and (min-width: 961px) {
+  @media screen and (min-width: 1200px) {
       display: none;
   }
 `;
