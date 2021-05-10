@@ -1,16 +1,41 @@
-@import '../../scss/variables';
+@import "../../scss/variables";
 .container {
-    position: absolute;
-    width: 100%;
-    text-align: center;
-    background: $headerBGColor;
-    margin-bottom:-3.05em;
-    left: 0;
-    flex-shrink: 0;
+  min-height: calc(14vh - 30px);
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  background: $headerBGColor;
+  left: 0;
+  flex-shrink: 0;
 }
-.footer {
-    font-family: $fontStack;
-    color: $headerFontColor;
-    font-size: 1.20em;
-    text-decoration: none;
+.icons {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 49%;
+  transform: translate(-50%, -50%);
+}
+
+a {
+  &:hover {
+    opacity: 0.75;
+  }
+}
+
+@media only screen and (min-width: 100px) and (max-width: 800px) {
+  a {
+    height: 30px !important;
+    width: 30px !important;
+  }
+}
+
+
+.text {
+  position: relative;
+  font-family: $fontStack;
+  color: rgb(153, 150, 150);
+  font-size: 3.5mm;
+  text-decoration: none;
+  margin-top: 6.5em;
+  float: right;
 }

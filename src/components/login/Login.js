@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import axios from 'axios';
 import Form from '../form/Form';
 import Input from '../formComponents/Input';
 import styles from './Login.module.scss';

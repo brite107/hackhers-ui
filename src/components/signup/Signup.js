@@ -14,7 +14,6 @@ import Input from '../formComponents/Input';
 import Select from '../formComponents/Select';
 import styles from './Signup.module.scss';
 import FormLoadingSpinner from '../spinner/FormLoadingSpinner';
-import { Error } from '../productsDisplay/ErrorMessage';
 import { makeRequest, saveObjToSessionStorage } from '../../utils/Helper';
 
 /**
@@ -125,10 +124,10 @@ const Signup = ({
 
   return (
     <div className={styles.Signup}>
-      {isLoaded ? null : (
-        <FormLoadingSpinner />
-      )}
       <div className={styles.container}>
+        {isLoaded ? null : (
+          <FormLoadingSpinner />
+        )}
         <Form
           onSubmit={handleSubmit(createCustomer)}
           title="Sign Up"
@@ -136,7 +135,7 @@ const Signup = ({
           submitting={submitting}
           buttonText="Create Account"
         >
-          <Row>
+          <Row className="pb-0">
             <Col lg={6}>
               <Input
                 label="First Name"
@@ -215,7 +214,7 @@ const Signup = ({
             </Col>
           </Row>
           <Row>
-            <Col lg={6}>
+            <Col lg={6} className="pb-4">
               <Input
                 label="City"
                 type="text"
@@ -233,6 +232,7 @@ const Signup = ({
                 name="state"
                 register={register}
                 error={errors.state}
+                className={styles.state}
               />
             </Col>
             <Col lg={4}>
@@ -251,7 +251,7 @@ const Signup = ({
           <h5 className="text-center text-success mt-4">**Form submitted successfully**</h5>
           )}
           {errorMessage && (
-          <h5 className="text-center text-danger mt-4">{errorMessage}</h5>
+          <h5 className="text-center text-danger">{errorMessage}</h5>
           )}
         </Form>
       </div>

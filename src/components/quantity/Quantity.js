@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faChevronRight, faChevronLeft, faCircle, faCheckCircle, faPlus
+  faChevronRight, faChevronLeft
 } from '@fortawesome/free-solid-svg-icons';
 import styles from './Quantity.module.scss';
 
@@ -11,22 +11,6 @@ const Quantity = () => {
   const [items, setItems] = useState([
     { itemName: 'item 1', quantity: 1, isSelected: false }
   ]);
-
-  const [inputValue, setInputValue] = useState('');
-  const [totalItemCount, setTotalItemCount] = useState(6);
-
-  const handleAddButtonClick = () => {
-    const newItem = {
-      itemName: inputValue,
-      quantity: 1,
-      isSelected: false
-    };
-
-    const newItems = [...items, newItem];
-
-    setItems(newItems);
-    setInputValue('');
-  };
 
   const handleQuantityIncrease = (index) => {
     const newItems = [...items];
