@@ -1,7 +1,4 @@
 @import '../../scss/variables';
-.body{
-  margin-top: -4em;
-}
 .submit {
   cursor: pointer;
   border-radius: 0px;
@@ -27,10 +24,15 @@
   height: calc(100% - 3.05em);
   background: $formPageBGColors;
   background: $formPageBGGradient;
-  margin-bottom: -6.6em;
+  margin-bottom: -3.05em;
 display: flex;
 align-items: center;
 justify-content: center;
+}
+
+.container {
+  margin-top:2em;
+  width: 50%;
 }
 
 .error {
@@ -50,21 +52,10 @@ justify-content: center;
   padding-left: 100px;
 }
 
-.passwordError {
-  height: 30px;
-  padding-top: 0px;
-  font-size: 17px;
-  color: tomato;
-  padding-left: 83px;
-}
 
-// form {
-//   height: 100%;
-// }
-
-
-.signup {
-  padding-top: 8px; //TODO: adjust for form modifications
+.link {
+  padding-top: 20px;
+  padding-bottom: 10px; //TODO: adjust for form modifications
   font-size: 1em;
   font-family: $fontStack;
   //padding-left: .5em;
@@ -80,4 +71,8 @@ justify-content: center;
   :hover {
     color: rgb(63, 60, 204);
   }
+}
+
+button {
+  margin-bottom: 1em;
 }

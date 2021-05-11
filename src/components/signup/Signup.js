@@ -131,7 +131,7 @@ const Signup = ({
         <Form
           onSubmit={handleSubmit(createCustomer)}
           title="Sign Up"
-          className="form-customer-entry mx-auto mt-5 p-5"
+          className="form-customer-entry mx-auto mt-4"
           submitting={submitting}
           buttonText="Create Account"
         >
@@ -246,12 +246,11 @@ const Signup = ({
               />
             </Col>
           </Row>
-
           {!Object.keys(errors).length && success && (
-          <h5 className="text-center text-success mt-4">**Form submitted successfully**</h5>
+          <h5 className="text-center text-success error-spacing">**Form submitted successfully**</h5>
           )}
           {errorMessage && (
-          <h5 className="text-center text-danger">{errorMessage}</h5>
+          <h5 className="text-center text-danger error-spacing">{errorMessage}</h5>
           )}
         </Form>
       </div>
