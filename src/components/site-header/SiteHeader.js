@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { RiShoppingBagLine } from 'react-icons/ri';
-import { Col, Row } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
 import { BsGearFill } from 'react-icons/bs';
 import Logo from '../logo/Logo';
 import styles from './SiteHeader.module.scss';
 import { getCustomer } from '../../utils/common';
-
+import BurgerMenu from '../burgerMenu/BurgerMenu';
 /**
  * @name SiteHeader
  * @description The SiteHeader is a functional component that
@@ -34,37 +34,47 @@ const SiteHeader = ({
             </Link>
             <span className="mx-4">|</span>
             <Link to="/" onClick={handleLogout}>
-              LOGOUT
+              SIGNOUT
             </Link>
           </div>
         </>
       ) : (
         <div>
-          <Link to="/login"> SIGN IN </Link>
+          <Link to="/login">
+            SIGN IN
+          </Link>
         </div>
       )}
     </div>
     <nav className={styles.nav}>
-      <Row className="my-auto">
-        <Col lg="2">
-          <Link to="/">
-            <Logo />
-          </Link>
-        </Col>
-        <Col lg="8" className="my-auto">
-          <div className={styles.navLinks}>
-            {dropdown}
-          </div>
-        </Col>
-        <Col lg="2">
-          <div className={styles.icon}>
-            <Link to="/shoppingCart">
-              <RiShoppingBagLine />
+      <Container fluid>
+        <Row className="my-auto">
+          <Col xs={1} sm={2} md={3} lg={1} xl={2} className="my-auto">
+            <Link to="/">
+              <Logo />
             </Link>
-          </div>
-        </Col>
-      </Row>
+          </Col>
+          <Col xs={8} sm={7} md={7} lg={9} xl={8} className="my-auto">
+            <div>
+              {dropdown}
+            </div>
+          </Col>
+          <Col xs={1} sm={1} md={1} lg={1} xl={2} className="my-auto">
+            <div className={styles.icon}>
+              <Link to="/shoppingCart">
+                <RiShoppingBagLine />
+              </Link>
+            </div>
+          </Col>
+          <Col xs={1} sm={1} md={1} lg={1} className="my-auto">
+            <div className={styles.menu}>
+              <BurgerMenu />
+            </div>
+          </Col>
+        </Row>
+      </Container>
     </nav>
+
   </div>
 );
 export default SiteHeader;

@@ -1,7 +1,7 @@
-@import '../../scss/variables';
+@import "../../scss/variables";
 .container {
   width: 100%;
-  height: fit-content;
+  height: 3em;
   background: $headerBGColor;
   position: fixed;
   top: 0;
@@ -9,7 +9,7 @@
 }
 .signIn {
   display: flexbox;
-  margin-top: .35em;
+  margin-top: 0.35em;
   text-align: right;
   padding-right: 1.5em;
   :link {
@@ -25,21 +25,33 @@
   }
 }
 .nav {
-  display: flex;
   background: white;
+  margin-top: 0.25em;
+  justify-content: space-between;
 }
 .email {
+  display: flexbox;
   color: rgb(223, 215, 215);
-  justify-content: space-between 30px;
   font-family: $fontStack;
   text-decoration: none;
   align-items: center;
 }
 .icon {
   text-align: right;
-  background: white;
   color: $navlinksFontColor;
-  padding-right: 1em;
+  padding-right: .70em;
+  padding-bottom: .25em;
+  font-size: 2em;
+  :visited {
+    text-decoration: none;
+    color: $navlinksFontColor;
+  }
+}
+.menu {
+  text-align: right;
+  color: $navlinksFontColor;
+  padding-right: .70em;
+  padding-bottom: .25em;
   font-size: 2em;
   :visited {
     text-decoration: none;
