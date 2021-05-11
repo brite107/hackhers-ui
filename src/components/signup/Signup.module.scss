@@ -6,8 +6,12 @@
     background: $formPageBGColors;
     background: $formPageBGGradient;
     margin-bottom: -3.05em;
+display: flex;
+align-items: center;
+justify-content: center;
 }
 
 .container {
-    padding-top: 1em;
+    margin-top:4em;
+    width: 75%;
 }
