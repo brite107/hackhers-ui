@@ -29,11 +29,7 @@ const Slideshow = () => {
   };
 
   return (
-<<<<<<< HEAD
-    <div>
-=======
     <div className="Slideshow">
->>>>>>> c69b46710559ce4d34d0f2de17ffa72a33a6564b
       <div className={styles.margin}>Free shipping on orders over $25</div>
       <div className={styles.my__carousel_main}>
         <Carousel
