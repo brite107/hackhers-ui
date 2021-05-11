@@ -18,7 +18,7 @@ export default function Cards({ product, imgUrl }) {
   const priceArray = priceFixed.toString().split('.');
   return (
     <div>
-      <Card border="bg-white rounded" hoverable className={styles.card}>
+      <Card border="bg-white rounded" hoverable="true" className={styles.card}>
         <Card.Body onClick={handleOpen}>
           <Card.Img className={styles.image} src={imgUrl} />
           <Card.Text className={styles.title}>{product.name}</Card.Text>

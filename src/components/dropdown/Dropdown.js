@@ -65,7 +65,7 @@ export default function App() {
             >
 
               <Row className={styles.submenubackground}>
-                <Col class="lg-6" className={styles.submenucontainer1}>
+                <Col className={`${styles.submenucontainer1} lg-6`}>
                   <h3 className={styles.cat}>CATEGORIES</h3>
                   <Link to="/products/Men/category/Baseball" className={styles.submenuitem}>Baseball</Link>
                   <Link to="/products/Men/category/Basketball" className={styles.submenuitem}>Basketball</Link>
@@ -78,7 +78,7 @@ export default function App() {
                   <Link to="/products/Men/category/Soccer" className={styles.submenuitem}>Soccer</Link>
                   <Link to="/products/Men/category/Weightlifting" className={styles.submenuitem}>Weightlifting</Link>
                 </Col>
-                <Col class="lg-6" className={styles.submenucontainer2}>
+                <Col className={`${styles.submenucontainer2} lg-6`}>
                   <h3 className={styles.type}>TYPES</h3>
                   <Link to="/products/Men/type/Belt" className={styles.submenuitem}>Belt</Link>
                   <Link to="/products/Men/type/Elbow+Pad" className={styles.submenuitem}>Elbow Pad</Link>
