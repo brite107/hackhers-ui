@@ -37,9 +37,14 @@ const SidebarNav = styled.nav`
   right: ${({ sidebar }) => (sidebar ? '0' : '-100%')};
   transition: 350ms;
   z-index: 10;
+  overflow-y: scroll;
+
+  @media screen and (min-width: 1200px) {
+      display: none;
+  }
 
   @media screen and (max-width: 960px) {
-      top: 2.75em;
+      top: 2.85em;
   }
 `;
 

@@ -48,7 +48,7 @@ const SiteHeader = ({
     </div>
     <nav className={styles.nav}>
       <Container fluid>
-        <Row fluid={true} className="my-auto">
+        <Row className="my-auto">
           <Col xs={1} sm={2} md={3} lg={1} xl={2} className="my-auto">
             <Link to="/">
               <Logo />
