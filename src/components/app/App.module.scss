@@ -1,6 +1,7 @@
 
 @import '../../scss/variables';
 .App {
+  overflow-x: hidden;
   min-height: calc(100vh - 3.05em);;
   position:relative;
   text-align: center;
