@@ -1,6 +1,9 @@
 @import "../../scss/variables";
 @import "~bootstrap/scss/bootstrap";
+<<<<<<< HEAD
 @import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css");
+=======
+>>>>>>> c69b46710559ce4d34d0f2de17ffa72a33a6564b
 
 .carousel {
   z-index: 0;
@@ -23,6 +26,7 @@
 
 .my__carousel_main {
   div {
+<<<<<<< HEAD
     ol {
       margin: auto;
       justify-self: center;
@@ -37,3 +41,25 @@
   }
 }
 
+=======
+      margin-top: 3em;
+    ol {
+      list-style-type: initial;
+      margin: auto;
+      justify-content: center;
+      li {
+        cursor: pointer;
+        font-size: 50px;
+        margin-left: 15px;
+        margin-right: 15px;
+        border-radius: 60%;
+        margin-bottom: 3mm;
+        color:rgba(170, 163, 163, 0.63);
+        &:active {
+            opacity: 0.75;
+          }
+        }
+      }
+    }
+  }
+>>>>>>> c69b46710559ce4d34d0f2de17ffa72a33a6564b

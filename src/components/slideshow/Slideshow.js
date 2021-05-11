@@ -6,6 +6,7 @@ import Womens from './Womens.svg';
 import Sunglasses from './sunshades.svg';
 import Guards from './shingaurds.svg';
 import styles from './Slideshow.module.scss';
+import './Slideshow.css';
 
 /**
  * @name Slideshow
@@ -28,7 +29,11 @@ const Slideshow = () => {
   };
 
   return (
+<<<<<<< HEAD
     <div>
+=======
+    <div className="Slideshow">
+>>>>>>> c69b46710559ce4d34d0f2de17ffa72a33a6564b
       <div className={styles.margin}>Free shipping on orders over $25</div>
       <div className={styles.my__carousel_main}>
         <Carousel

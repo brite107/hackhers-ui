@@ -1,33 +1,53 @@
-@import '../../scss/variables';
+@import "../../scss/variables";
 
-body {
-  padding: 0;
-  margin: 0;
-  overflow-x: hidden;
-  width: 100%;
+.breadcrumb {
+  height: calc(100% - 3.05em);
+  margin-bottom: 0px;
+  margin-top: 3em;
+  padding-top: 0.75em;
+  padding-bottom: 20px;
 }
+<<<<<<< HEAD
 
 .breadcrumb{
     height: calc(100% - 3.05em);
     margin-bottom: 0px;
     padding: 1.25em;
+=======
+.error,
+p {
+  font-family: $fontStack;
+  font-size: 2rem;
+  text-align: center;
+  font-weight: bold;
+  color: rgb(245, 50, 50);
+  padding-top: 5em;
+>>>>>>> c69b46710559ce4d34d0f2de17ffa72a33a6564b
 }
-.error, p {
-    font-family: $fontStack;
-    font-size: 2rem;
-    text-align: center;
-    font-weight: bold;
-    color: rgb(245, 50, 50);
-    padding-top: 5em;
+
+.loader {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: 4em;
+  background: $formPageBGColors;
+  background: $formPageBGGradient;
+  .body {
+    margin-top: 5.5em;
   }
-  
-  .loader {
-    display:grid;
-    justify-content: center;
-    align-items:center;
-    height:4em;
-    background: $formPageBGColors;
-    background: $formPageBGGradient;
+  // .breadcrumb {
+  //   height: calc(100% - 3.05em);
+  //   margin-bottom: 0px;
+  //   padding: 1.25em;
+  // }
+
+  .col-centered {
+    float: none;
+    margin: 0 auto;
   }
+<<<<<<< HEAD
 
   
+=======
+}
+>>>>>>> c69b46710559ce4d34d0f2de17ffa72a33a6564b
