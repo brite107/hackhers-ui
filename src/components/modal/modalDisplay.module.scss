@@ -46,17 +46,27 @@
   font-weight: bold;
   font-size: 30px;
   height: 125px;
-  padding-right: 20px;
+  margin-right: 20px;
+  padding-right: 12px;
   margin-left: -35px;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 990px)  {
   div.name {
     font-size: 18px;
     margin: auto;
-    padding-top: 3px;
+    padding-top: 10px;
     padding-bottom: 3px;
     height: auto;
+  }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 990px) {
+  div.name {
+    font-size: 24px;
+    margin-left: 0px;
+    padding-right: 12px;
+    height: 105px;
   }
 }
 
@@ -69,12 +79,20 @@
   margin-left: -35px;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 990px)  {
   div.price {
     font-size: 16px;
     margin: auto;
     padding-bottom: 8px;
     height: auto;
+  }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 990px) {
+  div.price {
+    font-size: 20px;
+    margin-left: 0px;
+    height: 85px;
   }
 }
 
@@ -85,12 +103,20 @@
   margin-left: -35px;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 990px) {
   div.description {
     font-size: 14px;
     margin: auto;
     padding-bottom: 8px;
     height: auto;
+  }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 990px) {
+  div.description {
+    font-size: 14px;
+    margin-left: 0px;
+    height: 110px;
   }
 }
 
@@ -101,12 +127,20 @@
   margin-left: -35px;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 990px) {
   div.demographics {
-    font-size: 12px;
+    font-size: 14px;
     margin: auto;
     padding-bottom: 3px;
     height: auto;
+  }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 990px) {
+  div.demographics {
+    font-size: 18px;
+    margin-left: 0px;
+    height: 25px;
   }
 }
 
@@ -117,12 +151,20 @@
   height: 35px;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 990px) {
   div.category {
     font-size: 12px;
     margin: auto;
     padding-bottom: 3px;
     height: auto;
+  }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 990px) {
+  div.category {
+    font-size: 16px;
+    margin-left: 0px;
+    height: 25px;
   }
 }
 
@@ -133,11 +175,19 @@
   height: 92px;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 990px){
   div.type {
     font-size: 12px;
     margin: auto;
     height: auto;
+  }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 990px) {
+  div.type {
+    font-size: 16px;
+    margin-left: 0px;
+    height: 40px;
   }
 }
 

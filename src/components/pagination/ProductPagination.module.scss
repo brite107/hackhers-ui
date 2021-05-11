@@ -1,0 +1,49 @@
+$primary: #12114a;
+
+
+.pagination {
+    justify-content: center;
+    padding-bottom: 10px;
+}
+
+.active {
+    z-index: 0;
+}
+
+
+.ellipsis {
+    text-decoration: none;
+}
+
+.pagination > li > a
+{
+    background-color: white;
+    color: #12114a;
+}
+
+.pagination > li > a:focus,
+.pagination > li > a:hover,
+.pagination > li > span:focus,
+.pagination > li > span:hover
+{
+    color: #12114a;
+    background-color: #eee;
+    border-color: #ddd;
+}
+
+.pagination > .active > a
+{
+    color: white;
+    background-color: #12114a !important;
+    border: solid 1px #12114a !important;
+}
+
+.pagination > .active > a:hover
+{
+    background-color: #12114a;
+    border: solid 1px #12114a;
+}
+
+
+
+@import '../../../node_modules/bootstrap/scss/bootstrap.scss'
