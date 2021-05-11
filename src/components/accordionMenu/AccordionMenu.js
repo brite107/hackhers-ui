@@ -11,6 +11,7 @@ const SidebarLink = styled(Link)`
   padding: 20px;
   list-style: none;
   height: 60px;
+  width: 100%;
   text-decoration: none;
   font-size: 18px;
   &:hover {
@@ -25,30 +26,34 @@ const SidebarLabel = styled.span`
 `;
 
 const DropdownLink = styled(Link)`
-  background: #fff;
-  height: 60px;
-  padding-left: 3rem;
-  border-bottom: .25px solid black;
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  color: #000000;
-  font-size: 18px;
-  &:hover {
-    border-left: 4px solid #632ce4;
-    cursor: pointer;
-  }
+display: flex;
+color: #000000;
+justify-content: space-between;
+border-bottom: .25px solid black;
+align-items: center;
+padding: 20px;
+list-style: none;
+height: 60px;
+width: 100%;
+text-decoration: none;
+font-size: 18px;
+&:hover {
+  border-left: 4px solid #632ce4;
+  cursor: pointer;
+}
 `;
 
 const AccordionLink = styled(Link)`
-background: #fff;
-  height: 60px;
-  padding-left: 3rem;
-  border-bottom: .25px solid black;
-  display: flex;
-  align-items: center;
-  text-decoration: none;
+display: flex;
   color: #000000;
+  justify-content: space-between;
+  border-bottom: .25px solid black;
+  align-items: center;
+  padding: 20px;
+  list-style: none;
+  height: 60px;
+  width: 100%;
+  text-decoration: none;
   font-size: 18px;
   &:hover {
     border-left: 4px solid #632ce4;
