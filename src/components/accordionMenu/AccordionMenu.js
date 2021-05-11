@@ -55,6 +55,7 @@ display: flex;
   width: 100%;
   text-decoration: none;
   font-size: 18px;
+  white-space: nowrap;
   &:hover {
     border-left: 4px solid #632ce4;
     cursor: pointer;
