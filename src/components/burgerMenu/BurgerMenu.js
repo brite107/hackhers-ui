@@ -66,7 +66,7 @@ function BurgerMenu() {
                 <SidebarNav sidebar={sidebar}>
                     <SidebarWrap>
                         {SidebarData.map((item, index) => {
-                            return <AccordionMenu item={item} key={index} />;
+                            return <AccordionMenu item={item} key={index} onClick={showSidebar} />;
                         })}
                     </SidebarWrap>
                 </SidebarNav>
