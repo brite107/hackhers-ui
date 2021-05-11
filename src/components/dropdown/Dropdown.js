@@ -31,7 +31,7 @@ export default function App() {
       opacity: 1,
       rotateX: 0,
       transition: {
-        duration: 0.25
+        duration: 0
       },
       display: 'block'
     },
@@ -39,8 +39,8 @@ export default function App() {
       opacity: 0,
       rotateX: -15,
       transition: {
-        duration: 0.25,
-        delay: 0
+        duration: 0,
+        delay: 0.01
       },
       transitionEnd: {
         display: 'none'
@@ -56,16 +56,17 @@ export default function App() {
             onHoverStart={toggleHoverMenu}
             onHoverEnd={toggleHoverMenu}
           >
-            <Link to="/products/Men">MEN</Link>
+            <Link className={styles.mainLinks} to="/products/Men">MEN</Link>
             <motion.div
               className={styles.submenu}
               initial="exit"
               animate={isHover ? 'enter' : 'exit'}
               variants={subMenuAnimate}
             >
+
               <Row className={styles.submenubackground}>
-                <Col className={styles.submenucontainer1}>
-                  <h3>CATEGORIES</h3>
+                <Col className={`${styles.submenucontainer1} lg-6`}>
+                  <h3 className={styles.cat}>CATEGORIES</h3>
                   <Link to="/products/Men/category/Baseball" className={styles.submenuitem}>Baseball</Link>
                   <Link to="/products/Men/category/Basketball" className={styles.submenuitem}>Basketball</Link>
                   <Link to="/products/Men/category/Boxing" className={styles.submenuitem}>Boxing</Link>
@@ -77,8 +78,8 @@ export default function App() {
                   <Link to="/products/Men/category/Soccer" className={styles.submenuitem}>Soccer</Link>
                   <Link to="/products/Men/category/Weightlifting" className={styles.submenuitem}>Weightlifting</Link>
                 </Col>
-                <Col className={styles.submenucontainer2}>
-                  <h3>TYPES</h3>
+                <Col className={`${styles.submenucontainer2} lg-6`}>
+                  <h3 className={styles.type}>TYPES</h3>
                   <Link to="/products/Men/type/Belt" className={styles.submenuitem}>Belt</Link>
                   <Link to="/products/Men/type/Elbow+Pad" className={styles.submenuitem}>Elbow Pad</Link>
                   <Link to="/products/Men/type/Flip+Flop" className={styles.submenuitem}>Flip Flop</Link>
@@ -100,6 +101,7 @@ export default function App() {
                   <Link to="/products/Men/type/Wristband" className={styles.submenuitem}>Wristband</Link>
                 </Col>
               </Row>
+
             </motion.div>
           </motion.div>
         </div>
@@ -109,7 +111,7 @@ export default function App() {
             onMouseEnter={toggleMouseMenu}
             onMouseLeave={toggleMouseMenu}
           >
-            <Link to="/products/Women">WOMEN</Link>
+            <Link className={styles.mainLinks} to="/products/Women">WOMEN</Link>
             <motion.div
               className={styles.submenu}
               initial="exit"
@@ -118,7 +120,7 @@ export default function App() {
             >
               <Row className={styles.submenubackground}>
                 <Col className={styles.submenucontainer1}>
-                  <h3>CATEGORIES</h3>
+                  <h3 className={styles.cat}>CATEGORIES</h3>
                   <Link to="/products/Women/category/Baseball" className={styles.submenuitem}>Baseball</Link>
                   <Link to="/products/Women/category/Basketball" className={styles.submenuitem}>Basketball</Link>
                   <Link to="/products/Women/category/Boxing" className={styles.submenuitem}>Boxing</Link>
@@ -131,7 +133,7 @@ export default function App() {
                   <Link to="/products/Women/category/Weightlifting" className={styles.submenuitem}>Weightlifting</Link>
                 </Col>
                 <Col className={styles.submenucontainer2}>
-                  <h3>TYPES</h3>
+                  <h3 className={styles.type}>TYPES</h3>
                   <Link to="/products/Women/type/Belt" className={styles.submenuitem}>Belt</Link>
                   <Link to="/products/Women/type/Elbow+Pad" className={styles.submenuitem}>Elbow Pad</Link>
                   <Link to="/products/Women/type/Flip+Flop" className={styles.submenuitem}>Flip Flop</Link>
@@ -162,7 +164,7 @@ export default function App() {
             onMouseOver={toggleOverMenu}
             onMouseOut={toggleOverMenu}
           >
-            <Link to="/products/Kids">KIDS</Link>
+            <Link className={styles.mainLinks} to="/products/Kids">KIDS</Link>
             <motion.div
               className={styles.submenu}
               initial="exit"
@@ -171,7 +173,7 @@ export default function App() {
             >
               <Row className={styles.submenubackground}>
                 <Col className={styles.submenucontainer1}>
-                  <h3>CATEGORIES</h3>
+                  <h3 className={styles.cat}>CATEGORIES</h3>
                   <Link to="/products/Kids/category/Baseball" className={styles.submenuitem}>Baseball</Link>
                   <Link to="/products/Kids/category/Basketball" className={styles.submenuitem}>Basketball</Link>
                   <Link to="/products/Kids/category/Boxing" className={styles.submenuitem}>Boxing</Link>
@@ -184,7 +186,7 @@ export default function App() {
                   <Link to="/products/Kids/category/Weightlifting" className={styles.submenuitem}>Weightlifting</Link>
                 </Col>
                 <Col className={styles.submenucontainer2}>
-                  <h3>TYPES</h3>
+                  <h3 className={styles.type}>TYPES</h3>
                   <Link to="/products/Kids/type/Belt" className={styles.submenuitem}>Belt</Link>
                   <Link to="/products/Kids/type/Elbow+Pad" className={styles.submenuitem}>Elbow Pad</Link>
                   <Link to="/products/Kids/type/Flip+Flop" className={styles.submenuitem}>Flip Flop</Link>

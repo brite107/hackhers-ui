@@ -1,28 +1,35 @@
-@import '../../scss/variables';
+@import "../../scss/variables";
 
-// .row{
-//   display: grid;
-//   grid-template-columns: 1fr 1fr 1fr;
-// }
-.breadcrumb{
-    height: calc(100% - 3.05em);
-    margin-bottom: 0px;
-    padding: 1.25em;
+.breadcrumb {
+  height: calc(100% - 3.05em);
+  margin-bottom: 0px;
+  margin-top: 3em;
+  padding-top: 0.75em;
+  padding-bottom: 20px;
 }
-.error, p {
-    font-family: $fontStack;
-    font-size: 2rem;
-    text-align: center;
-    font-weight: bold;
-    color: rgb(245, 50, 50);
-    padding-top: 5em;
+.error,
+p {
+  font-family: $fontStack;
+  font-size: 2rem;
+  text-align: center;
+  font-weight: bold;
+  color: rgb(245, 50, 50);
+  padding-top: 5em;
+}
+
+.loader {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: 4em;
+  background: $formPageBGColors;
+  background: $formPageBGGradient;
+  .body {
+    margin-top: 5.5em;
   }
-  
-  .loader {
-    display:grid;
-    justify-content: center;
-    align-items:center;
-    height:4em;
-    background: $formPageBGColors;
-    background: $formPageBGGradient;
+
+  .col-centered {
+    float: none;
+    margin: 0 auto;
   }
+}

@@ -21,8 +21,10 @@
     "eslint-config-airbnb": "^18.2.0",
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "framer-motion": "^4.1.9",
+    "install": "^0.13.0",
     "material-design-icons": "^3.0.1",
     "node-sass": "^4.14.1",
+    "npm": "^7.11.2",
     "react": "^16.13.1",
     "react-bootstrap": "^1.5.2",
     "react-circle-progress-bar": "^0.1.4",
@@ -31,9 +33,12 @@
     "react-icons": "^4.2.0",
     "react-loading-overlay": "^1.0.1",
     "react-overlay-loading": "^1.0.3",
+    "react-responsive-modal": "^6.0.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
     "react-select": "^4.3.0",
+    "styled-components": "^5.3.0",
+    "react-social-media-buttons": "^1.0.8",
     "typescript": "^4.0.3",
     "yup": "^0.32.9"
   },
@@ -60,6 +65,7 @@
     ]
   },
   "devDependencies": {
-    "cypress": "^7.2.0"
+    "cypress": "^7.2.0",
+    "eslint-plugin-cypress": "^2.11.3"
   }
 }

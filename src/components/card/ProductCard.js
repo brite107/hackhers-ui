@@ -1,5 +1,5 @@
 import Card from 'react-bootstrap/Card';
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './ProductCard.module.scss';
 import ModalDisplay from '../modal/ModalDisplay';
 
@@ -10,12 +10,16 @@ import ModalDisplay from '../modal/ModalDisplay';
  * @returns Card component
  */
 export default function Cards({ product, imgUrl }) {
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
   const priceFixed = product.price.toFixed(2);
   const priceArray = priceFixed.toString().split('.');
   return (
-    <>
-      <Card border="bg-white rounded" className={styles.card}>
-        <Card.Body>
+    <div>
+      <Card border="bg-white rounded" hoverable="true" className={styles.card}>
+        <Card.Body onClick={handleOpen}>
           <Card.Img className={styles.image} src={imgUrl} />
           <Card.Text className={styles.title}>{product.name}</Card.Text>
           <Card.Text className={styles.cost}>
@@ -23,9 +27,18 @@ export default function Cards({ product, imgUrl }) {
             {priceArray[0]}
             <sup className={styles.cents}>{priceArray[1]}</sup>
           </Card.Text>
-          <ModalDisplay product={product} />
+          <button type="button" className={styles.buttonDetails} onClick={handleOpen}>
+            VIEW DETAILS
+          </button>
         </Card.Body>
       </Card>
-    </>
+      <ModalDisplay
+        product={product}
+        open={open}
+        handleOpen={handleOpen}
+        handleClose={handleClose}
+        className={styles.buttonDetails}
+      />
+    </div>
   );
 }

@@ -1,10 +1,12 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import { useHistory } from 'react-router-dom';
+import { FaChevronCircleRight, FaChevronCircleLeft } from 'react-icons/fa';
 import Womens from './Womens.svg';
 import Sunglasses from './sunshades.svg';
 import Guards from './shingaurds.svg';
 import styles from './Slideshow.module.scss';
+import './Slideshow.css';
 
 /**
  * @name Slideshow
@@ -15,50 +17,64 @@ const Slideshow = () => {
   const history = useHistory();
 
   const toKids = () => {
-    history.push('/products/kids/shinguard');
+    history.push('/products/Kids/type/Shin+Guard');
   };
 
   const toWomens = () => {
-    history.push('/products/women/pant');
+    history.push('/products/Women/type/Pant');
   };
 
   const toSunglasses = () => {
-    history.push('/products/men/sunglasses');
+    history.push('/products/Women/type/Sunglasses');
   };
 
   return (
-    <Carousel className={styles.carousel} nextLabel="" prevLabel="" pause={false} wrap interval={10000}>
-      <Carousel.Item
-        interval={10000}
-        onClick={toWomens}
-      >
-        <img
-          className="d-bloclk w-100"
-          src={Womens}
-          alt="First slide"
-        />
-      </Carousel.Item>
-      <Carousel.Item
-        interval={10000}
-        onClick={toKids}
-      >
-        <img
-          className="d-block w-100"
-          src={Guards}
-          alt="Second slide"
-        />
-      </Carousel.Item>
-      <Carousel.Item
-        interval={10000}
-        onClick={toSunglasses}
-      >
-        <img
-          className="d-block w-100"
-          src={Sunglasses}
-          alt="Third slide"
-        />
-      </Carousel.Item>
-    </Carousel>
+    <div className="Slideshow">
+      <div className={styles.margin}>Free shipping on orders over $25</div>
+      <div className={styles.my__carousel_main}>
+        <Carousel
+          className={styles.carousel}
+          nextLabel=""
+          prevLabel=""
+          pause="hover"
+          wrap
+          interval={10000}
+          nextIcon={<FaChevronCircleRight size={50} />}
+          prevIcon={<FaChevronCircleLeft size={50} />}
+        >
+          <Carousel.Item
+            interval={10000}
+            onClick={toWomens}
+          >
+            <img
+              className="d-bloclk w-100"
+              src={Womens}
+              alt="First slide"
+            />
+          </Carousel.Item>
+          <Carousel.Item
+            interval={10000}
+            onClick={toKids}
+          >
+            <img
+              className="d-block w-100"
+              src={Guards}
+              alt="Second slide"
+            />
+          </Carousel.Item>
+          <Carousel.Item
+            interval={10000}
+            onClick={toSunglasses}
+          >
+            <img
+              className="d-block w-100"
+              src={Sunglasses}
+              alt="Third slide"
+            />
+          </Carousel.Item>
+        </Carousel>
+      </div>
+    </div>
   );
 };
 

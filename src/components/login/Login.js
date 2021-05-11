@@ -19,6 +19,9 @@ const Login = (props) => {
   const [error, setError] = useState('');
   const [isLoaded, setIsLoaded] = useState(true);
 
+  const [emailError, setEmailError] = useState('');
+  const [passwordError, setPasswordError] = useState('');
+
   const history = useHistory();
 
   /**
@@ -27,39 +30,62 @@ const Login = (props) => {
    * It also sets the state of loggedIn and email, so that they can be passed to the navigation bar.
    */
   const getLoggedIn = async () => {
-    setIsLoaded(false);
-    try {
-      await axios({
-        method: 'POST',
-        url: 'http://localhost:8080/login',
-        data: {
-          email,
-          password
-        }
-      }).then((response) => {
-        const { token } = response.data;
-        sessionStorage.setItem('token', token);
-        sessionStorage.setItem('userEmail', email);
-        props.setEmail(email);
-        setTimeout(() => {
-          setIsLoaded({ isLoaded: false });
-        }, 3000); // TODO: Set to 1.5 seconds for demo
-        if (response.status === 200) {
-          setIsLoaded(true);
-          sessionStorage.setItem('loggedIn', true);
-          props.setLoggedIn(true);
-          setError('');
-          history.push('/');
-        }
-      });
-    } catch (err) {
-      setIsLoaded(true);
-      setError('Invalid username or password');
+    let validForm = true;
+    if (email.length === 0) {
+      validForm = false;
+      setError('');
+      setEmailError(
+        'Email is required'
+      );
+    }
+    if (email.length > 0) {
+      setEmailError('');
+    }
+    if (password.length === 0) {
+      validForm = false;
+      setError('');
+      setPasswordError(
+        'Password is required'
+      );
+    }
+    if (password.length > 0) {
+      setPasswordError('');
+    }
+    if (validForm) {
+      try {
+        setIsLoaded(false);
+        await axios({
+          method: 'POST',
+          url: 'http://localhost:8080/login',
+          data: {
+            email,
+            password
+          }
+        }).then((response) => {
+          const { token } = response.data;
+          sessionStorage.setItem('token', token);
+          sessionStorage.setItem('userEmail', email);
+          props.setEmail(email);
+          setTimeout(() => {
+            setIsLoaded({ isLoaded: false });
+          }, 3000); // TODO: Set to 1.5 seconds for demo
+          if (response.status === 200) {
+            setIsLoaded(true);
+            sessionStorage.setItem('loggedIn', true);
+            props.setLoggedIn(true);
+            setError('');
+            history.push('/');
+          }
+        });
+      } catch (err) {
+        setIsLoaded(true);
+        setError('Invalid username or password');
+      }
     }
   };
 
   return (
-    <div>
+    <div className={styles.body}>
       <div className={styles.loader}>
         {isLoaded ? null : (
           <FormLoadingSpinner isLoaded={isLoaded.loading} />
@@ -76,6 +102,7 @@ const Login = (props) => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
+          <div className={styles.emailError}>{emailError}</div>
           <div />
           <Input
             label="Password"
@@ -85,6 +112,7 @@ const Login = (props) => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
+          <div className={styles.passwordError}>{passwordError}</div>
           <div />
           <button className={styles.submit} type="button" onClick={getLoggedIn}>
             Submit

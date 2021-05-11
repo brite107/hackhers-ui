@@ -6,18 +6,24 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { useHistory } from 'react-router-dom';
 import { CustomerSignUp } from '../../utils/validation';
-import { STATE_ABBREVIATIONS, CUSTOMER_ENDPOINT, LOGIN_ENDPOINT } from '../../utils/constants';
+import {
+  STATE_ABBREVIATIONS, API_URL, CUSTOMER_EP, LOGIN_EP
+} from '../../utils/constants';
 import Form from '../formComponents/HookForm';
 import Input from '../formComponents/Input';
 import Select from '../formComponents/Select';
 import styles from './Signup.module.scss';
 import FormLoadingSpinner from '../spinner/FormLoadingSpinner';
+import { makeRequest, saveObjToSessionStorage } from '../../utils/Helper';
+
 /**
  * This page displays a sign up form
  * @param setLoggedIn a function from the app component that sets the LoggedIn state
  * @param setEmail a function from the app component that sets the Email
  */
-const Signup = ({ setLoggedIn, setEmail }) => {
+const Signup = ({
+  setLoggedIn, setEmail
+}) => {
   const {
     register,
     errors,
@@ -48,25 +54,19 @@ const Signup = ({ setLoggedIn, setEmail }) => {
     setIsLoaded(false);
     const { email, password } = data;
     try {
-      await axios({
-        method: 'POST',
-        url: LOGIN_ENDPOINT,
-        data: {
-          email,
-          password
-        }
-      }).then((response) => {
-        const { token } = response.data;
-        sessionStorage.setItem('token', token);
-        sessionStorage.setItem('userEmail', data.email);
-        setEmail(data.email);
-        if (response.status === 200) {
-          setIsLoaded(true);
-          sessionStorage.setItem('loggedIn', true);
-          setLoggedIn(true);
-          history.push('/');
-        }
+      const response = await makeRequest('post', API_URL + LOGIN_EP, {
+        email,
+        password
       });
+      const { token } = response.data;
+      sessionStorage.setItem('token', token);
+      sessionStorage.setItem('userEmail', data.email);
+      setEmail(data.email);
+      if (response.status === 200) {
+        setIsLoaded(true);
+        sessionStorage.setItem('loggedIn', true);
+        setLoggedIn(true);
+      }
     } catch (err) {
       setIsLoaded(true);
       setErrorMessage('Invalid username or password');
@@ -81,29 +81,41 @@ const Signup = ({ setLoggedIn, setEmail }) => {
   const createCustomer = async (data) => {
     // disable the button while customer is being created
     setSubmitting(true);
+    // display the loading spinner
+    setIsLoaded(false);
     // removes an error message if there was one
     setErrorMessage('');
-    // eslint-disable-next-line no-param-reassign
-    delete data.confirmPassword;
-    const { phoneNumber } = data;
+    let editedData = { ...data };
+    delete editedData.confirmPassword;
+    const { phoneNumber } = editedData;
     const numbersOnly = phoneNumber.replace(/\D/g, '');
-    // eslint-disable-next-line no-param-reassign
-    data = { ...data, phoneNumber: numbersOnly };
+    editedData = { ...editedData, phoneNumber: numbersOnly };
     try {
-      const response = await axios.post(CUSTOMER_ENDPOINT, data);
+      const response = await axios.post(API_URL + CUSTOMER_EP, data);
       if (response.status === 201) {
+        // put the customer information including Id into session storage
+        delete editedData.password;
+        const { id } = response.data;
+        editedData = { ...editedData, id };
+        saveObjToSessionStorage('customer', editedData);
+        // sessionStorage.setItem('customerId', JSON.stringify(response.data.id));
         getLoggedIn(data);
+        setIsLoaded(true);
         setSuccess(true);
         setTimeout(() => {
           setSuccess(false);
-        }, 10000);
-        setLoggedIn(true);
+        }, 4000);
         reset();
+        history.push('/');
       }
     } catch (err) {
-      if (err.response.status === 409) {
-        setErrorMessage('Email is already in use');
+      if (err.response) {
+        if (err.response.status === 409) {
+          setIsLoaded(true);
+          setErrorMessage('Email is already in use');
+        }
       } else {
+        setIsLoaded(true);
         setErrorMessage('An unexpected error has occurred.');
       }
     }
@@ -112,17 +124,18 @@ const Signup = ({ setLoggedIn, setEmail }) => {
 
   return (
     <div className={styles.Signup}>
-      {isLoaded ? null : (
-        <FormLoadingSpinner />
-      )}
       <div className={styles.container}>
+        {isLoaded ? null : (
+          <FormLoadingSpinner />
+        )}
         <Form
           onSubmit={handleSubmit(createCustomer)}
           title="Sign Up"
-          className="form-customer-entry mx-auto mt-5 w-50"
+          className="form-customer-entry mx-auto mt-5 p-5"
           submitting={submitting}
+          buttonText="Create Account"
         >
-          <Row>
+          <Row className="pb-0">
             <Col lg={6}>
               <Input
                 label="First Name"
@@ -201,7 +214,7 @@ const Signup = ({ setLoggedIn, setEmail }) => {
             </Col>
           </Row>
           <Row>
-            <Col lg={6}>
+            <Col lg={6} className="pb-4">
               <Input
                 label="City"
                 type="text"
@@ -219,6 +232,7 @@ const Signup = ({ setLoggedIn, setEmail }) => {
                 name="state"
                 register={register}
                 error={errors.state}
+                className={styles.state}
               />
             </Col>
             <Col lg={4}>
@@ -237,7 +251,7 @@ const Signup = ({ setLoggedIn, setEmail }) => {
           <h5 className="text-center text-success mt-4">**Form submitted successfully**</h5>
           )}
           {errorMessage && (
-          <h5 className="text-center text-danger mt-4">{errorMessage}</h5>
+          <h5 className="text-center text-danger">{errorMessage}</h5>
           )}
         </Form>
       </div>

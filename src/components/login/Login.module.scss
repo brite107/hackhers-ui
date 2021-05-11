@@ -1,5 +1,7 @@
 @import '../../scss/variables';
-
+.body{
+  margin-top: -4em;
+}
 .submit {
   cursor: pointer;
   border-radius: 0px;
@@ -10,53 +12,63 @@
   padding-right: 20px;
   padding-bottom: 10px;
   padding-top: 10px;
-  margin-top: 30px; //TODO: adjust for form modifications
-  margin-left: 1em;
+  margin-top: 10px; //TODO: adjust for form modifications
+  margin-left: .75em;
   font-family: $fontStack;
   text-decoration: none;
   font-size: 1.1em;
   box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
   width: 90%;
+  
 }
 
-.loader {
-  display:grid;
-  justify-content: center;
-  align-items:center;
-  height:4em;
+.Signup {
+  min-height: 100vh;
+  height: calc(100% - 3.05em);
   background: $formPageBGColors;
   background: $formPageBGGradient;
+  margin-bottom: -6.6em;
+display: flex;
+align-items: center;
+justify-content: center;
 }
 
 .error {
+  height: 30px;
   padding-top: 20px;
+  padding-bottom: 40px;
   font-size: 17px;
   color: tomato;
+  align-items: center;
 }
 
-.bigerror {
-  font-size: 100px;
-  color: rgb(7, 6, 6);
-  border-style: groove;
-  background-color: rgba(255, 255, 255, 0.856);
+.emailError {
+  height: 30px;
+  padding-top: 0px;
+  font-size: 17px;
+  color: tomato;
+  padding-left: 100px;
 }
 
-.upperForm {
-  padding-left: 2em;
-  padding-right: 2em;
-  font-family: $fontStack;
-  font-weight: lighter;
-  font-size: 1.1em;
-  text-align: left;
-  vertical-align: 20px;
+.passwordError {
+  height: 30px;
+  padding-top: 0px;
+  font-size: 17px;
+  color: tomato;
+  padding-left: 83px;
 }
+
+// form {
+//   height: 100%;
+// }
+
 
 .signup {
-  padding-top: 35px; //TODO: adjust for form modifications
+  padding-top: 8px; //TODO: adjust for form modifications
   font-size: 1em;
   font-family: $fontStack;
-  padding-left: .5em;
-  text-align: justify;
+  //padding-left: .5em;
+  text-align: center;
 
   :link {
     color: $navlinksFontColor;
@@ -66,6 +78,6 @@
     color: $navlinksFontColor;
   }
   :hover {
-    color: rgb(16, 16, 133);
+    color: rgb(63, 60, 204);
   }
 }
