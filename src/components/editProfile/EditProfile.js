@@ -83,11 +83,12 @@ const EditProfile = ({ setEmail }) => {
 
   return (
     <div className={styles.Signup}>
-      {isLoaded ? null : (
-        <FormLoadingSpinner />
-      )}
+
       {getToken() ? (
         <div className={styles.container}>
+          {isLoaded ? null : (
+            <FormLoadingSpinner />
+          )}
           <Form
             onSubmit={handleSubmit(editCustomer)}
             title="Edit Profile"

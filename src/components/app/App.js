@@ -5,7 +5,7 @@ import {
   Switch
 } from 'react-router-dom';
 import Homepage from '../homepage/Homepage';
-import Login from '../login/Login';
+import Login2 from '../login/Login2';
 import Signup from '../signup/Signup';
 import SiteHeader from '../site-header/SiteHeader';
 import styles from './App.module.scss';
@@ -68,9 +68,10 @@ const App = () => {
             exact
             path="/login"
             render={() => (
-              <Login
+              <Login2
                 setLoggedIn={setLoggedIn}
                 setEmail={setEmail}
+                email={email}
               />
             )}
           />

@@ -42,8 +42,7 @@ const DemoDisplay = () => {
   }, [demographic]);
 
   return (
-    <div>
-
+    <div className={styles.body}>
       <div>
         { error ? <ErrorMessage /> : (
           <Row>
