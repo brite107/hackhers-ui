@@ -34,7 +34,7 @@ const SiteHeader = ({
             </Link>
             <span className="mx-4">|</span>
             <Link to="/" onClick={handleLogout}>
-              LOGOUT
+              SIGNOUT
             </Link>
           </div>
         </>
