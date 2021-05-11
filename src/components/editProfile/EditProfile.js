@@ -92,7 +92,7 @@ const EditProfile = ({ setEmail }) => {
           <Form
             onSubmit={handleSubmit(editCustomer)}
             title="Edit Profile"
-            className="form-customer-entry mx-auto mt-5 p-5"
+            className="form-customer-entry mx-auto mt-5"
             submitting={submitting}
             buttonText="Update Profile"
           >
