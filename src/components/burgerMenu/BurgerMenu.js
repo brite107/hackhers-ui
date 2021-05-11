@@ -51,7 +51,12 @@ const SidebarNav = styled.nav`
 const SidebarWrap = styled.div`
   width: 100%;
 `;
-
+/**
+ * @name BurgerMenu
+ * @description The Burgermenu changes the dropdown menu to a 
+ * burgermenu that is displayed to the right of the shopping bag.
+ * @returns an icon that contains navigation links.
+ */
 function BurgerMenu() {
     const [sidebar, setSidebar] = useState(false);
 

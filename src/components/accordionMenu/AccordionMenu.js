@@ -55,7 +55,14 @@ background: #fff;
     cursor: pointer;
   }
 `;
-
+/**
+ * @name AccordionMenu
+ * @description The AccordionMenu is a functional component that
+ * displays navigation links in the style of an accordion menu. 
+ * @param {item} is the different menu items.
+ * @param {onClick} handles closing the accordion menu on a category or type click.
+ * @returns a menu that contains navigation links.
+ */
 const AccordionMenu = ({ item, onClick }) => {
   const [subnav, setSubnav] = useState(false);
   const [submenu, setSubmenu] = useState(false);

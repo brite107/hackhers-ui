@@ -1,6 +1,10 @@
 import React from 'react';
 import * as RiIcons from 'react-icons/ri'
 
+/**
+ * @name SidebarData
+ * @description this is the data used to fill in the accordion menu.
+ */
 export const SidebarData = [
     {
         title: 'MENS',
