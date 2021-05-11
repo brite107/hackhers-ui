@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
-import Modal from 'react-bootstrap/Modal';
+import React from 'react';
+import { Modal, Image } from 'react-bootstrap';
 import { faWindowClose } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import ProductCard from '../card/ProductCard';
 import styles from './modalDisplay.module.scss';
-// import Quantity from '../quantity/Quantity';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 /**
  * @name ModalDisplay
@@ -11,37 +12,33 @@ import styles from './modalDisplay.module.scss';
  * @param {product} product This component takes in the product object.
  * @returns A modal displaing all product information and image.
  */
-const ModalDisplay = ({ product }) => {
-  const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+const ModalDisplay = ({
+  product, open, handleClose
+}) => {
   const priceFixed = product.price.toFixed(2);
   const priceArray = priceFixed.toString().split('.');
+
   return (
     <>
-      <button type="button" className={styles.buttonDetails} onClick={handleShow}>
-        VIEW DETAILS
-      </button>
       <Modal
         size="xl"
         centered
         dialog
         className="modal-dialog-centered"
-        show={show}
+        show={open}
         onHide={handleClose}
         keyboard
       >
-        <Modal.Body className={styles.body}>
+        <Modal.Body>
           <div>
             <FontAwesomeIcon icon={faWindowClose} className={styles.close} aria-hidden="true" onClick={handleClose} />
           </div>
-          <div className={styles.container} container-fluid>
-            <div className="row no-gutters">
-              <div className="col-md-6">
-                <img className={styles.image} src={product.imageUrl} alt="product" />
+          <div className="container p-0">
+            <div className="row p-0">
+              <div className="col-12 col-lg-7">
+                <Image fluid src={product.imageUrl} alt="product" />
               </div>
-              <div className="col-md-6">
+              <div className="col-12 col-lg-5">
                 <div className={styles.name}>
                   {product.name}
                 </div>
@@ -64,10 +61,11 @@ const ModalDisplay = ({ product }) => {
                   <b>Type: </b>
                   {product.type}
                 </div>
-                {/* <Quantity className={'{styles.footer} justify-content-center;'} /> */}
-                <button type="button" className={styles.buttonCart}>
-                  ADD TO CART
-                </button>
+                <div className={styles.buttonContainer}>
+                  <button type="button" className={styles.buttonCart}>
+                    ADD TO CART
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -76,5 +74,4 @@ const ModalDisplay = ({ product }) => {
     </>
   );
 };
-
 export default ModalDisplay;

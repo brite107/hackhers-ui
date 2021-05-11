@@ -4,7 +4,7 @@ import ErrorMessage from './ErrorMessage';
 const Input = ({
   label, type, name, id, placeholder, register, error, onChange
 }) => (
-  <div className="form-group mb-3">
+  <div className="form-group pb-0 mb-0" style={{ height: '103px' }}>
     <label htmlFor={id}>
       {label}
     </label>

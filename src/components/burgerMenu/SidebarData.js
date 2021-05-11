@@ -1,6 +1,10 @@
 import React from 'react';
 import * as RiIcons from 'react-icons/ri'
 
+/**
+ * @name SidebarData
+ * @description this is the data used to fill in the accordion menu.
+ */
 export const SidebarData = [
     {
         title: 'MENS',
@@ -15,7 +19,7 @@ export const SidebarData = [
                 iconClosed: <RiIcons.RiArrowDownSFill />,
                 iconOpened: <RiIcons.RiArrowUpSFill />,
 
-                subNav: [
+                subMenu: [
                     {
                         title: "Baseball",
                         path: "/products/Men/category/Baseball"
@@ -64,7 +68,7 @@ export const SidebarData = [
                 iconClosed: <RiIcons.RiArrowDownSFill />,
                 iconOpened: <RiIcons.RiArrowUpSFill />,
 
-                subNav: [
+                subMenu: [
                     {
                         title: "Belt",
                         path: "/products/Men/type/Belt"
@@ -154,7 +158,7 @@ export const SidebarData = [
                 iconClosed: <RiIcons.RiArrowDownSFill />,
                 iconOpened: <RiIcons.RiArrowUpSFill />,
 
-                subNav: [
+                subMenu: [
                     {
                         title: "Baseball",
                         path: "/products/Women/category/Baseball"
@@ -203,7 +207,7 @@ export const SidebarData = [
                 iconClosed: <RiIcons.RiArrowDownSFill />,
                 iconOpened: <RiIcons.RiArrowUpSFill />,
 
-                subNav: [
+                subMenu: [
                     {
                         title: "Belt",
                         path: "/products/Women/type/Belt"
@@ -293,7 +297,7 @@ export const SidebarData = [
                 iconClosed: <RiIcons.RiArrowDownSFill />,
                 iconOpened: <RiIcons.RiArrowUpSFill />,
 
-                subNav: [
+                subMenu: [
                     {
                         title: "Baseball",
                         path: "/products/Kids/category/Baseball"
@@ -342,7 +346,7 @@ export const SidebarData = [
                 iconClosed: <RiIcons.RiArrowDownSFill />,
                 iconOpened: <RiIcons.RiArrowUpSFill />,
 
-                subNav: [
+                subMenu: [
                     {
                         title: "Belt",
                         path: "/products/Kids/type/Belt"
