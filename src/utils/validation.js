@@ -33,3 +33,10 @@ export const CustomerSignUp = yup.object().shape({
     .required('Zip Code is required')
     .matches(/^(?!0{3})[0-9]{5}(?:-[0-9]{4})?$/, 'Zip Code must be valid')
 });
+
+export const LoginValidation = yup.object().shape({
+  email: yup.string()
+    .required('Email is required'),
+  password: yup.string()
+    .required('Password is required')
+});

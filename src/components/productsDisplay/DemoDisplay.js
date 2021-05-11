@@ -1,59 +1,46 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import { Col, Row } from 'react-bootstrap';
 import styles from './ProductDisplay.module.scss';
 import ProductCard from '../card/ProductCard';
 import PageLoadingSpinner from '../spinner/PageLoadingSpinner';
 import ErrorMessage from './ErrorMessage';
-import { PRODUCTS_ENDPOINT } from '../../utils/constants';
-
+import ProductPagination from '../pagination/ProductPagination';
+import useFetchProducts from './useFetchProducts';
 /**
  * Displays products category and type
  * @returns product category and type
  */
 const DemoDisplay = () => {
+  const [page, setPage] = useState(1);
   const { demographic } = useParams();
-  const [error, setError] = useState(false);
-  const [appState, setAppState] = useState({
-    loading: false,
-    products: null
+  const [params, setParams] = useState({
+    demographic
   });
-  /**
-   * Makes a GET request to the api
-   * @returns products data
-   */
+  const {
+    products, loading, error, hasNextPage
+  } = useFetchProducts(params, page);
   useEffect(() => {
+    setParams({
+      demographic
+    });
     window.scrollTo(0, 0);
-    setAppState({ loading: true });
-    axios
-      .get(`${PRODUCTS_ENDPOINT}?demographic=${demographic}`)
-      .then((products) => {
-        const allProducts = products.data;
-        setAppState({ loading: false, products: allProducts });
-      })
-      .catch(() => {
-        setAppState({ loading: false });
-        setError(true);
-        setTimeout(() => {
-          setError(false);
-        }, 6000);
-      });
   }, [demographic]);
-
   return (
-    <div>
-
+    <div className={styles.body}>
       <div>
         { error ? <ErrorMessage /> : (
           <Row>
             <h2 className={styles.breadcrumb}>{`${demographic}`}</h2>
+            <div className="col-lg-12 col-centered">
+              <ProductPagination page={page} setPage={setPage} hasNextPage={hasNextPage} />
+            </div>
           </Row>
         )}
-        {appState.loading && <PageLoadingSpinner />}
+        {loading && <PageLoadingSpinner />}
       </div>
       <Row className="fluid">
-        {appState.products && appState.products.map((product) => (
+        {products && products.map((product) => (
           <Col>
             <ProductCard
               className={styles.card}
@@ -66,6 +53,9 @@ const DemoDisplay = () => {
           </Col>
         ))}
       </Row>
+      <div className="col-lg-12 col-centered pb-1">
+        <ProductPagination page={page} setPage={setPage} hasNextPage={hasNextPage} />
+      </div>
     </div>
   );
 };

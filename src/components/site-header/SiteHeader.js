@@ -2,8 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { RiShoppingBagLine } from 'react-icons/ri';
 import { Col, Container, Row } from 'react-bootstrap';
+import { BsGearFill } from 'react-icons/bs';
 import Logo from '../logo/Logo';
 import styles from './SiteHeader.module.scss';
+import { getCustomer } from '../../utils/common';
 import BurgerMenu from '../burgerMenu/BurgerMenu';
 /**
  * @name SiteHeader
@@ -17,17 +19,25 @@ import BurgerMenu from '../burgerMenu/BurgerMenu';
  * @returns a header that contains navigation links.
  */
 const SiteHeader = ({
-  email, isLoggedIn, handleLogout, dropdown
+  isLoggedIn, handleLogout, dropdown
 }) => (
   <div className={styles.container}>
     <div className={styles.signIn}>
       {isLoggedIn ? (
-        <div className={styles.email}>
-          {email}
-          <Link to="/" onClick={handleLogout}>
-            SIGN OUT
-          </Link>
-        </div>
+        <>
+          <div className={styles.email}>
+            <Link to={`/customers/edit/${getCustomer().id}`} className="mx-3">
+              {getCustomer().email}
+            </Link>
+            <Link to={`/customers/edit/${getCustomer().id}`}>
+              <BsGearFill />
+            </Link>
+            <span className="mx-4">|</span>
+            <Link to="/" onClick={handleLogout}>
+              LOGOUT
+            </Link>
+          </div>
+        </>
       ) : (
         <div>
           <Link to="/login">

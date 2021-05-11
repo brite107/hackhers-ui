@@ -4,7 +4,7 @@ import SubmitButton from './SubmitButton';
 import styles from './HookForm.module.scss';
 
 const Form = ({
-  children, title, onSubmit, className, submitting
+  children, title, onSubmit, className, submitting, buttonText
 }) => (
   <Container>
     <div className={styles.form}>
@@ -14,7 +14,7 @@ const Form = ({
         <div className={styles.submit}>
           <SubmitButton
             className={styles.btn}
-            text="Create Account"
+            text={buttonText}
             disabled={submitting}
           />
         </div>

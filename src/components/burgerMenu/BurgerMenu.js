@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
-import AccordionMenu from '../accodionMenu/AccordionMenu';
+import AccordionMenu from '../accordionMenu/AccordionMenu';
 import { IconContext } from 'react-icons/lib';
 import { SidebarData } from './SidebarData'
 

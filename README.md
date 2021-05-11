@@ -47,7 +47,7 @@ Installs Cypress End to End testing service.
 
 ### `npx cypress open`
 
-Opens the Cypress dashboard. Once the dashboard is open you can select the specific test you wish to run. 
+Opens the Cypress dashboard. Once the dashboard is open you can select the specific test you wish to run.
 
 ## Learn More
 
