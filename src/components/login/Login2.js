@@ -10,7 +10,7 @@ import Form from '../formComponents/HookForm';
 import Input from '../formComponents/Input';
 import FormLoadingSpinner from '../spinner/FormLoadingSpinner';
 import { LoginValidation } from '../../utils/validation';
-import styles from '../signup/Signup.module.scss';
+import styles from './Login.module.scss';
 import {
   API_URL, LOGIN_EP, CUSTOMER_EP
 } from '../../utils/constants';
@@ -92,7 +92,7 @@ const Login2 = ({ setEmail, setLoggedIn }) => {
         <Form
           onSubmit={handleSubmit(getLoggedIn)}
           title="Sign In"
-          className="form-customer-entry mx-auto mt-5 p-5"
+          className="form-customer-entry mx-auto p-5"
           submitting={submitting}
           buttonText="Submit"
         >
@@ -120,12 +120,12 @@ const Login2 = ({ setEmail, setLoggedIn }) => {
               />
             </Col>
           </Row>
-          {!Object.keys(errors).length && success && (
-          <h5 className="text-center text-success mt-4">**Form submitted successfully**</h5>
-          )}
           {errorMessage && (
           <h5 className="text-center text-danger">{errorMessage}</h5>
           )}
+          <div className={styles.link}>
+            <Link to="/signup">Not registered? Create an account here</Link>
+          </div>
         </Form>
       </div>
     </div>
